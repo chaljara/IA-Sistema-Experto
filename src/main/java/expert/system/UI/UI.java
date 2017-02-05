@@ -586,6 +586,7 @@ public class UI {
 		panelObj.setLayout(null);
 		
 		txtQuiz = new JTextField();
+		txtQuiz.setEditable(false);
 		txtQuiz.setBounds(10, 2, 160, 22);
 		panelObj.add(txtQuiz);
 		txtQuiz.setBorder(null);
@@ -599,7 +600,7 @@ public class UI {
 		txtDisagree.setBorder(null);
 		txtDisagree.setFont(new Font("Cambria", Font.BOLD, 14));
 		txtDisagree.setBackground(SystemColor.control);
-		txtDisagree.setBounds(966, 4, 59, 20);
+		txtDisagree.setBounds(973, 4, 99, 20);
 		panelObj.add(txtDisagree);
 		txtDisagree.setText("Disagree");
 		txtDisagree.setColumns(10);
@@ -609,19 +610,21 @@ public class UI {
 		txtAgree.setBorder(null);
 		txtAgree.setBackground(SystemColor.control);
 		txtAgree.setFont(new Font("Cambria", Font.BOLD, 14));
-		txtAgree.setBounds(718, 4, 43, 20);
+		txtAgree.setBounds(684, 4, 65, 20);
 		panelObj.add(txtAgree);
 		txtAgree.setText("Agree");
 		txtAgree.setColumns(10);
 		
 		textField = new JTextField();
+		textField.setHorizontalAlignment(SwingConstants.CENTER);
+		textField.setEditable(false);
 		textField.setBorder(null);
 		textField.setBackground(SystemColor.control);
-		textField.setFont(new Font("Cambria", Font.PLAIN, 16));
-		textField.setText("3  -  2  -  1  -  0  -  1  -  2  -  3");
-		textField.setBounds(765, 4, 198, 20);
+		textField.setFont(new Font("Dialog", Font.PLAIN, 14));
+		textField.setText("3  -   2  -  1  -  0  -  1  -   2  -  3");
+		textField.setBounds(759, 4, 202, 20);
 		panelObj.add(textField);
-		textField.setColumns(10);
+		textField.setColumns(12);
 		
 		panelSplash = new JPanel();
 		panelSplash.setBounds(0, 0, 1084, 711);
