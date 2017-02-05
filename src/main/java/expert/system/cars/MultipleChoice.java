@@ -9,7 +9,7 @@ public class MultipleChoice {
 	
 	//Recibe el valor del slider, devuelve un arreglo double, en index 0 el valor de extro y en index 1 el intro.
 	
-double[] Calcular_Percent_ExtravertionVsIntravertion(int slidervalue){ //Ingresar como parametro el valor del slide (1-7) -> slider.getValue()
+public static double[] Calcular_Percent_ExtravertionVsIntravertion(int slidervalue){ //Ingresar como parametro el valor del slide (1-7) -> slider.getValue()
 		int likert=0;
 		double pintro=0;
 		double pextro=0;
@@ -64,7 +64,7 @@ double[] Calcular_Percent_ExtravertionVsIntravertion(int slidervalue){ //Ingresa
 		return vector;
 	}
 	
-String Evaluar_Pregunta_ExtravertionVsIntravertion(ArrayList<double[]> ListaPorc){ //Recibe una lista 
+public static String Evaluar_Pregunta_ExtravertionVsIntravertion(ArrayList<double[]> ListaPorc){ //Recibe una lista 
 		double totalpextro=0, totalpintro=0;            //con todos los porcentajes, los suma y compara
 		double vector[]=new double[2];                  //Cada pregunta debe guardar sus porcentajes
 		                                                //En una lista global de esa categoria (total 4 listas)
@@ -83,7 +83,7 @@ String Evaluar_Pregunta_ExtravertionVsIntravertion(ArrayList<double[]> ListaPorc
 
 /////////////////////////// Thinking and Feeling ///////////////////////////////////////
 
-double[] Calcular_Percent_ThinkingVsFeeling(int slidervalue){ //Ingresar como parametro el valor del slide (1-7) -> slider.getValue()
+public static double[] Calcular_Percent_ThinkingVsFeeling(int slidervalue){ //Ingresar como parametro el valor del slide (1-7) -> slider.getValue()
 	int likert=0;
 	double pthink=0;
 	double pfeel=0;
@@ -138,7 +138,7 @@ double[] Calcular_Percent_ThinkingVsFeeling(int slidervalue){ //Ingresar como pa
 	return vector;
 }
 
-String Evaluar_Pregunta_ThinkingVsFeeling(ArrayList<double[]> ListaPorc){ //Recibe una lista 
+public static String Evaluar_Pregunta_ThinkingVsFeeling(ArrayList<double[]> ListaPorc){ //Recibe una lista 
 	double totalpthink=0, totalpfeel=0;            //con todos los porcentajes, los suma y compara
 	double vector[]=new double[2];                  //Cada pregunta debe guardar sus porcentajes
 	                                                //En una lista global de esa categoria (total 4 listas)
@@ -157,7 +157,7 @@ String Evaluar_Pregunta_ThinkingVsFeeling(ArrayList<double[]> ListaPorc){ //Reci
 
 //////////////////////////////// Sensing Vs Intuition////////////////////////////
 
-double[] Calcular_Percent_SensingVsIntuition(int slidervalue){ //Ingresar como parametro el valor del slide (1-7) -> slider.getValue()
+public static double[] Calcular_Percent_SensingVsIntuition(int slidervalue){ //Ingresar como parametro el valor del slide (1-7) -> slider.getValue()
 	int likert=0;
 	double pintu=0;
 	double psense=0;
@@ -212,7 +212,7 @@ double[] Calcular_Percent_SensingVsIntuition(int slidervalue){ //Ingresar como p
 	return vector;
 }
 
-String Evaluar_Pregunta_SensingVsIntuition(ArrayList<double[]> ListaPorc){ //Recibe una lista 
+public static String Evaluar_Pregunta_SensingVsIntuition(ArrayList<double[]> ListaPorc){ //Recibe una lista 
 	double totalpsense=0, totalpintu=0;            //con todos los porcentajes, los suma y compara
 	double vector[]=new double[2];                  //Cada pregunta debe guardar sus porcentajes
 	                                                //En una lista global de esa categoria (total 4 listas)
@@ -232,7 +232,7 @@ String Evaluar_Pregunta_SensingVsIntuition(ArrayList<double[]> ListaPorc){ //Rec
 
 ////////////////////////////////////////// Judging Vs Perceiving //////////////////////
 
-double[] Calcular_Percent_JudgingVsPerceiving(int slidervalue){ //Ingresar como parametro el valor del slide (1-7) -> slider.getValue()
+public static double[] Calcular_Percent_JudgingVsPerceiving(int slidervalue){ //Ingresar como parametro el valor del slide (1-7) -> slider.getValue()
 	int likert=0;
 	double pperce=0;
 	double pjudge=0;
@@ -287,7 +287,7 @@ double[] Calcular_Percent_JudgingVsPerceiving(int slidervalue){ //Ingresar como 
 	return vector;
 }
 
-String Evaluar_Pregunta_JudgingVsPerceiving(ArrayList<double[]> ListaPorc){ //Recibe una lista 
+public static String Evaluar_Pregunta_JudgingVsPerceiving(ArrayList<double[]> ListaPorc){ //Recibe una lista 
 	double totalpjudge=0, totalpperce=0;            //con todos los porcentajes, los suma y compara
 	double vector[]=new double[2];                  //Cada pregunta debe guardar sus porcentajes
 	                                                //En una lista global de esa categoria (total 4 listas)
