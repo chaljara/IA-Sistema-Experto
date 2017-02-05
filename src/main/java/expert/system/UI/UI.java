@@ -365,12 +365,14 @@ public class UI {
 		txtpnYouFind.setText("1. You find it difficult to introduce yourself to other people");
 		
 		JTextPane txtpnYouOften = new JTextPane();
+		txtpnYouOften.setEditable(false);
 		txtpnYouOften.setBackground(SystemColor.control);
 		txtpnYouOften.setFont(new Font("Cambria", Font.PLAIN, 16));
 		txtpnYouOften.setText("2. You often get so lost in thoughts that you ignore or forget your surroundings");
 		panelQuestions.add(txtpnYouOften);
 		
 		JTextPane txtpnYouFind_1 = new JTextPane();
+		txtpnYouFind_1.setEditable(false);
 		txtpnYouFind_1.setFont(new Font("Cambria", Font.PLAIN, 16));
 		txtpnYouFind_1.setText("3. You find it easy to stay relaxed and focused even when there is some pressure");
 		panelQuestions.add(txtpnYouFind_1);
@@ -384,17 +386,20 @@ public class UI {
 		txtpnYouDo.setEditable(false);
 		
 		JTextPane txtpnYouFeel = new JTextPane();
+		txtpnYouFeel.setEditable(false);
 		panelQuestions.add(txtpnYouFeel);
 		txtpnYouFeel.setText("5. You feel superior to other people");
 		txtpnYouFeel.setFont(new Font("Cambria", Font.PLAIN, 16));
 		
 		JTextPane txtpnBeingOrganized = new JTextPane();
+		txtpnBeingOrganized.setEditable(false);
 		txtpnBeingOrganized.setBackground(SystemColor.control);
 		panelQuestions.add(txtpnBeingOrganized);
 		txtpnBeingOrganized.setText("6. Being organized is more important to you than being adaptable");
 		txtpnBeingOrganized.setFont(new Font("Cambria", Font.PLAIN, 16));
 		
 		JTextPane txtpnWinningA = new JTextPane();
+		txtpnWinningA.setEditable(false);
 		panelQuestions.add(txtpnWinningA);
 		txtpnWinningA.setText("7. Winning a debate matters less to you than making sure no one gets upset");
 		txtpnWinningA.setFont(new Font("Cambria", Font.PLAIN, 16));
@@ -408,17 +413,20 @@ public class UI {
 		panelQuestions.add(txtpnYouDo_1);
 		
 		JTextPane txtpnYouConsider = new JTextPane();
+		txtpnYouConsider.setEditable(false);
 		txtpnYouConsider.setText("9. You consider yourself more practical than creative");
 		txtpnYouConsider.setFont(new Font("Cambria", Font.PLAIN, 16));
 		panelQuestions.add(txtpnYouConsider);
 		
 		JTextPane txtpnPeopleCan = new JTextPane();
+		txtpnPeopleCan.setEditable(false);
 		txtpnPeopleCan.setBackground(SystemColor.control);
 		txtpnPeopleCan.setText("10. People can rarely upset you");
 		txtpnPeopleCan.setFont(new Font("Cambria", Font.PLAIN, 16));
 		panelQuestions.add(txtpnPeopleCan);
 		
 		JTextPane txtpnYourTravel = new JTextPane();
+		txtpnYourTravel.setEditable(false);
 		txtpnYourTravel.setText("11. Your travel plans are usually well thought out");
 		txtpnYourTravel.setFont(new Font("Cambria", Font.PLAIN, 16));
 		panelQuestions.add(txtpnYourTravel);
@@ -432,17 +440,20 @@ public class UI {
 		panelQuestions.add(txtpnItIs);
 		
 		JTextPane txtpnYourMood = new JTextPane();
+		txtpnYourMood.setEditable(false);
 		txtpnYourMood.setText("13. Your mood can change very quickly");
 		txtpnYourMood.setFont(new Font("Cambria", Font.PLAIN, 16));
 		panelQuestions.add(txtpnYourMood);
 		
 		JTextPane txtpnInA = new JTextPane();
+		txtpnInA.setEditable(false);
 		txtpnInA.setBackground(SystemColor.control);
 		txtpnInA.setText("14. In a discussion, truth should be more important than people\u2019s sensitivities");
 		txtpnInA.setFont(new Font("Cambria", Font.PLAIN, 16));
 		panelQuestions.add(txtpnInA);
 		
 		JTextPane txtpnYouRarely = new JTextPane();
+		txtpnYouRarely.setEditable(false);
 		txtpnYouRarely.setText("15. You rarely worry about how your actions affect other people");
 		txtpnYouRarely.setFont(new Font("Cambria", Font.PLAIN, 16));
 		panelQuestions.add(txtpnYouRarely);
@@ -456,17 +467,20 @@ public class UI {
 		panelQuestions.add(txtpnYouRarely_1);
 		
 		JTextPane txtpnYouOften_1 = new JTextPane();
+		txtpnYouOften_1.setEditable(false);
 		txtpnYouOften_1.setText("17. You often find yourself lost in thought when you are walking in nature");
 		txtpnYouOften_1.setFont(new Font("Cambria", Font.PLAIN, 16));
 		panelQuestions.add(txtpnYouOften_1);
 		
 		JTextPane txtpnYouDo_2 = new JTextPane();
+		txtpnYouDo_2.setEditable(false);
 		txtpnYouDo_2.setBackground(SystemColor.control);
 		txtpnYouDo_2.setText("18. You do not let other people influence your actions");
 		txtpnYouDo_2.setFont(new Font("Cambria", Font.PLAIN, 16));
 		panelQuestions.add(txtpnYouDo_2);
 		
 		JTextPane txtpnYourDreams = new JTextPane();
+		txtpnYourDreams.setEditable(false);
 		txtpnYourDreams.setText("19. Your dreams tend to focus on the real world and its events");
 		txtpnYourDreams.setFont(new Font("Cambria", Font.PLAIN, 16));
 		panelQuestions.add(txtpnYourDreams);
@@ -480,17 +494,20 @@ public class UI {
 		panelQuestions.add(txtpnYouOften_2);
 		
 		JTextPane txtpnYouWould = new JTextPane();
+		txtpnYouWould.setEditable(false);
 		txtpnYouWould.setText("21. You would rather improvise than spend time coming up with a detailed plan");
 		txtpnYouWould.setFont(new Font("Cambria", Font.PLAIN, 16));
 		panelQuestions.add(txtpnYouWould);
 		
 		JTextPane txtpnYouAre = new JTextPane();
+		txtpnYouAre.setEditable(false);
 		txtpnYouAre.setBackground(SystemColor.control);
 		txtpnYouAre.setText("22. You are a relatively reserved and quiet person");
 		txtpnYouAre.setFont(new Font("Cambria", Font.PLAIN, 16));
 		panelQuestions.add(txtpnYouAre);
 		
 		JTextPane txtpnYouOften_3 = new JTextPane();
+		txtpnYouOften_3.setEditable(false);
 		txtpnYouOften_3.setText("23. You often contemplate the reasons for human existence");
 		txtpnYouOften_3.setFont(new Font("Cambria", Font.PLAIN, 16));
 		panelQuestions.add(txtpnYouOften_3);
@@ -504,33 +521,39 @@ public class UI {
 		panelQuestions.add(txtpnIfYour);
 		
 		JTextPane txtpnBeingRight = new JTextPane();
+		txtpnBeingRight.setEditable(false);
 		txtpnBeingRight.setText("25. Being right is more important than being cooperative when it comes to teamwork");
 		txtpnBeingRight.setFont(new Font("Cambria", Font.PLAIN, 16));
 		panelQuestions.add(txtpnBeingRight);
 		
 		JTextPane txtpnYouFrequently = new JTextPane();
+		txtpnYouFrequently.setEditable(false);
 		txtpnYouFrequently.setBackground(SystemColor.control);
 		txtpnYouFrequently.setText("26. You frequently misplace your things");
 		txtpnYouFrequently.setFont(new Font("Cambria", Font.PLAIN, 16));
 		panelQuestions.add(txtpnYouFrequently);
 		
 		JTextPane txtpnYouFrequently_1 = new JTextPane();
+		txtpnYouFrequently_1.setEditable(false);
 		txtpnYouFrequently_1.setText("27. Your mind is always buzzing with unexplored ideas and plans");
 		txtpnYouFrequently_1.setFont(new Font("Cambria", Font.PLAIN, 16));
 		panelQuestions.add(txtpnYouFrequently_1);
 		
 		JTextPane txtpnYourMind = new JTextPane();
+		txtpnYourMind.setEditable(false);
 		txtpnYourMind.setBackground(SystemColor.control);
 		txtpnYourMind.setText("28. If the room is full, you stay closer to the walls, avoiding the center");
 		txtpnYourMind.setFont(new Font("Cambria", Font.PLAIN, 16));
 		panelQuestions.add(txtpnYourMind);
 		
 		JTextPane txtpnYouHave = new JTextPane();
+		txtpnYouHave.setEditable(false);
 		txtpnYouHave.setText("29. You have always been interested in unconventional and ambiguous things, e.g. in books, art, or movies");
 		txtpnYouHave.setFont(new Font("Cambria", Font.PLAIN, 16));
 		panelQuestions.add(txtpnYouHave);
 		
 		JTextPane txtpnYouOften_4 = new JTextPane();
+		txtpnYouOften_4.setEditable(false);
 		txtpnYouOften_4.setBackground(SystemColor.control);
 		txtpnYouOften_4.setText("30. You often take initiative in social situations");
 		txtpnYouOften_4.setFont(new Font("Cambria", Font.PLAIN, 16));
