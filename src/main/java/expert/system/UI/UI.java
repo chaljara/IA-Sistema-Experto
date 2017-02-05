@@ -34,6 +34,7 @@ import javax.swing.border.CompoundBorder;
 import javax.swing.border.LineBorder;
 
 import expert.system.cars.MultipleChoice;
+import expert.system.cars.Personalities;
 import expert.system.cars.Question;
 import expert.system.cars.Quiz;
 
@@ -588,6 +589,7 @@ public class UI {
 				ArrayList<double[]>ListaJP;
 				ListaJP=new ArrayList();
 				double vector[]=new double[2];
+				String EI,SN,TF,JP;
 				
 				vector=MultipleChoice.Calcular_Percent_ExtravertionVsIntravertion(slider1.getValue());
 				ListaEI.add(vector);
@@ -603,7 +605,8 @@ public class UI {
 				ListaEI.add(vector);
 				vector=MultipleChoice.Calcular_Percent_ExtravertionVsIntravertion(slider30.getValue());
 				ListaEI.add(vector);
-				System.out.println(MultipleChoice.Evaluar_Pregunta_ExtravertionVsIntravertion(ListaEI));
+				EI=MultipleChoice.Evaluar_Pregunta_ExtravertionVsIntravertion(ListaEI);
+				System.out.println(EI);
 				
 				vector=MultipleChoice.Calcular_Percent_SensingVsIntuition(slider3.getValue());
 				ListaSN.add(vector);
@@ -621,7 +624,8 @@ public class UI {
 				ListaSN.add(vector);
 				vector=MultipleChoice.Calcular_Percent_SensingVsIntuition(slider29.getValue());
 				ListaSN.add(vector);
-				System.out.println(MultipleChoice.Evaluar_Pregunta_SensingVsIntuition(ListaSN));
+				SN=MultipleChoice.Evaluar_Pregunta_SensingVsIntuition(ListaSN);
+				System.out.println(SN);
 				
 				vector=MultipleChoice.Calcular_Percent_ThinkingVsFeeling(slider2.getValue());
 				ListaTF.add(vector);
@@ -639,7 +643,8 @@ public class UI {
 				ListaTF.add(vector);
 				vector=MultipleChoice.Calcular_Percent_ThinkingVsFeeling(slider25.getValue());
 				ListaTF.add(vector);
-				System.out.println(MultipleChoice.Evaluar_Pregunta_ThinkingVsFeeling(ListaTF));
+				TF=MultipleChoice.Evaluar_Pregunta_ThinkingVsFeeling(ListaTF);
+				System.out.println(TF);
 				
 				vector=MultipleChoice.Calcular_Percent_JudgingVsPerceiving(slider5.getValue());
 				ListaJP.add(vector);
@@ -655,8 +660,12 @@ public class UI {
 				ListaJP.add(vector);
 				vector=MultipleChoice.Calcular_Percent_JudgingVsPerceiving(slider27.getValue());
 				ListaJP.add(vector);
-				System.out.println(MultipleChoice.Evaluar_Pregunta_JudgingVsPerceiving(ListaJP));
-				System.out.println("---------------------");
+				JP=MultipleChoice.Evaluar_Pregunta_JudgingVsPerceiving(ListaJP);
+				System.out.println(JP);
+				System.out.println("-------------");
+				
+				Personalities pfinal=Quiz.DefinirPersonalidad(EI, SN, TF, JP);
+				System.out.println(pfinal.toString());
 				
 				
 			}

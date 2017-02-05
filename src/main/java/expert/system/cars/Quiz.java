@@ -44,7 +44,7 @@ public class Quiz {
 		return questions;
 	} 
 	
-Personalities DefinirPersonalidad(String EI, String SN, String TF, String JP){
+public static Personalities DefinirPersonalidad(String EI, String SN, String TF, String JP){
 		
 		if(EI.equals("Introvertion") && SN.equals("Intuition") && TF.equals("Thinking")){
 			if(JP.equals("Judging"))
