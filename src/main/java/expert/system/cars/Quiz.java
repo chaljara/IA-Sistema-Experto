@@ -4,6 +4,44 @@ import java.util.ArrayList;
 
 public class Quiz {
 	
-	private ArrayList<Question> questions;  
+	private ArrayList<Question> questions;
+
+	public Quiz() {
+		questions = new ArrayList<Question>();
+		questions.add(new Question("1. You find it difficult to introduce yourself to other people" , 0));
+		questions.add(new Question("2. You often get so lost in thoughts that you ignore or forget your surroundings" , 0));
+		questions.add(new Question("3. You find it easy to stay relaxed and focused even when there is some pressure" , 0));
+		questions.add(new Question("4. You do not usually initiate conversation" , 0));
+		questions.add(new Question("5. You feel superior to other people" , 0));
+		questions.add(new Question("6. Being organized is more important to you than being adaptable" , 0));
+		questions.add(new Question("7. Winning a debate matters less to you than making sure no one gets upset" , 0));
+		questions.add(new Question("8. You do not mind being at the center of attention" , 0));
+		questions.add(new Question("9. You consider yourself more practical than creative" , 0));
+		questions.add(new Question("10. People can rarely upset you" , 0));
+		questions.add(new Question("11. Your travel plans are usually well thought out" , 0));
+		questions.add(new Question("12. It is often difficult for you to relate to other people\u2019s feelings" , 0));
+		questions.add(new Question("13. Your mood can change very quickly" , 0));
+		questions.add(new Question("14. In a discussion, truth should be more important than people\u2019s sensitivities" , 0));
+		questions.add(new Question("15. You rarely worry about how your actions affect other people" , 0));
+		questions.add(new Question("16. You rarely get carried away by fantasies and ideas" , 0));
+		questions.add(new Question("17. You often find yourself lost in thought when you are walking in nature" , 0));
+		questions.add(new Question("18. You do not let other people influence your actions" , 0));
+		questions.add(new Question("19. Your dreams tend to focus on the real world and its events" , 0));
+		questions.add(new Question("20. You often spend time exploring unrealistic and impractical yet intriguing ideas" , 0));
+		questions.add(new Question("21. You would rather improvise than spend time coming up with a detailed plan" , 0));
+		questions.add(new Question("22. You are a relatively reserved and quiet person" , 0));
+		questions.add(new Question("23. You often contemplate the reasons for human existence" , 0));
+		questions.add(new Question("24. As a parent, you would rather see your child grow up kind than smart" , 0));
+		questions.add(new Question("25. Being right is more important than being cooperative when it comes to teamwork" , 0));
+		questions.add(new Question("26. You frequently misplace your things" , 0));
+		questions.add(new Question("27. Your mind is always buzzing with unexplored ideas and plans" , 0));
+		questions.add(new Question("28. If the room is full, you stay closer to the walls, avoiding the center" , 0));
+		questions.add(new Question("29. You have always been interested in unconventional and ambiguous things, e.g. in books, art, or movies" , 0));
+		questions.add(new Question("30. You often take initiative in social situations" , 0));
+	}
+
+	public ArrayList<Question> getQuestions() {
+		return questions;
+	}  
 		
 }

@@ -1,1 +1,118 @@
 package rules
+
+import expert.system.cars.Personalities
+import expert.system.cars.CarSuggest
+
+dialect "java"
+
+rule "Recommend by Architect personality"
+	when
+		Car: CarSuggest(type==Personalities.ARCHITECT)
+	then
+		Car.setModelCar("SUV modelo Jeep");
+end
+
+rule "Recommend by Logician personality"
+	when
+		Car: CarSuggest(type==Personalities.LOGICIAN)
+	then
+		Car.setModelCar("SUV modelo Toyota 4Runner");
+end
+
+rule "Recommend by Commander personality"
+	when
+		Car: CarSuggest(type==Personalities.COMMANDER)
+	then
+		Car.setModelCar("Coche electrico modelo Tesla");
+end
+
+rule "Recommend by Debater personality"
+	when
+		Car: CarSuggest(type==Personalities.DEBATER)
+	then
+		Car.setModelCar("Hatchback");
+end
+
+rule "Recommend by Advocate personality"
+	when
+		Car: CarSuggest(type==Personalities.ADVOCATE)
+	then
+		Car.setModelCar("Todo terreno estilo Land Rover");
+end
+
+rule "Recommend by Mediator personality"
+	when
+		Car: CarSuggest(type==Personalities.MEDIATOR)
+	then
+		Car.setModelCar("Minivan");
+end
+
+rule "Recommend by PROTAGONIST personality"
+	when
+		Car: CarSuggest(type==Personalities.PROTAGONIST)
+	then
+		Car.setModelCar("Auto deportivo");
+end
+
+rule "Recommend by CAMPAIGNER personality"
+	when
+		Car: CarSuggest(type==Personalities.CAMPAIGNER)
+	then
+		Car.setModelCar("Auto compacto");
+end
+		
+rule "Recommend by LOGISTICIAN personality"
+	when
+		Car: CarSuggest(type==Personalities.LOGISTICIAN)
+	then
+		Car.setModelCar("Auto tipo Sedan");
+end
+
+rule "Recommend by DEFENDER personality"
+	when
+		Car: CarSuggest(type==Personalities.DEFENDER)
+	then
+		Car.setModelCar("auto todo terreno como la Ford Expdition");
+end
+
+rule "Recommend by EXECUTIVE personality"
+	when
+		Car: CarSuggest(type==Personalities.EXECUTIVE)
+	then
+		Car.setModelCar("Auto lujoso");
+end
+
+rule "Recommend by CONSUL personality"
+	when
+		Car: CarSuggest(type==Personalities.CONSUL)
+	then
+		Car.setModelCar("Camioneta, ejemplo: Ford F-150");
+end
+
+rule "Recommend by VIRTUOSO personality"
+	when
+		Car: CarSuggest(type==Personalities.VIRTUOSO)
+	then
+		Car.setModelCar("Auto deportivo, como un Camaro");
+end
+
+rule "Recommend by ADVENTURER personality"
+	when
+		Car: CarSuggest(type==Personalities.ADVENTURER)
+	then
+		Car.setModelCar("Camioneta, ejemplo: Ford F-150");
+end
+
+rule "Recommend by ENTREPRENEUR personality"
+	when
+		Car: CarSuggest(type==Personalities.ENTREPRENEUR)
+	then
+		Car.setModelCar("Auto SUV");
+end
+
+rule "Recommend by ENTERTAINER personality"
+	when
+		Car: CarSuggest(type==Personalities.ENTERTAINER)
+	then
+		Car.setModelCar("Auto deportivo como Ford Mustang");
+end
