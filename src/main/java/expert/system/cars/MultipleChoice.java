@@ -9,7 +9,7 @@ public class MultipleChoice {
 	
 	//Recibe el valor del slider, devuelve un arreglo double, en index 0 el valor de extro y en index 1 el intro.
 	
-double[] Calcular_Percent_ExtroIntro(int slidervalue){ //Ingresar como parametro el valor del slide (1-7) -> slider.getValue()
+double[] Calcular_Percent_ExtravertionVsIntravertion(int slidervalue){ //Ingresar como parametro el valor del slide (1-7) -> slider.getValue()
 		int likert=0;
 		double pintro=0;
 		double pextro=0;
@@ -64,7 +64,7 @@ double[] Calcular_Percent_ExtroIntro(int slidervalue){ //Ingresar como parametro
 		return vector;
 	}
 	
-String Evaluar_Pregunta_ExtroVsIntro(ArrayList<double[]> ListaPorc){ //Recibe una lista 
+String Evaluar_Pregunta_ExtravertionVsIntravertion(ArrayList<double[]> ListaPorc){ //Recibe una lista 
 		double totalpextro=0, totalpintro=0;            //con todos los porcentajes, los suma y compara
 		double vector[]=new double[2];                  //Cada pregunta debe guardar sus porcentajes
 		                                                //En una lista global de esa categoria (total 4 listas)
@@ -83,7 +83,7 @@ String Evaluar_Pregunta_ExtroVsIntro(ArrayList<double[]> ListaPorc){ //Recibe un
 
 /////////////////////////// Thinking and Feeling ///////////////////////////////////////
 
-double[] Calcular_Percent_ThinkingvsFeeling(int slidervalue){ //Ingresar como parametro el valor del slide (1-7) -> slider.getValue()
+double[] Calcular_Percent_ThinkingVsFeeling(int slidervalue){ //Ingresar como parametro el valor del slide (1-7) -> slider.getValue()
 	int likert=0;
 	double pthink=0;
 	double pfeel=0;
