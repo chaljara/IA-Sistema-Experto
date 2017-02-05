@@ -591,6 +591,8 @@ public class UI {
 				
 				vector=MultipleChoice.Calcular_Percent_ExtravertionVsIntravertion(slider1.getValue());
 				ListaEI.add(vector);
+				vector=MultipleChoice.Calcular_Percent_ExtravertionVsIntravertion(slider4.getValue());
+				ListaEI.add(vector);
 				vector=MultipleChoice.Calcular_Percent_ExtravertionVsIntravertion(slider8.getValue());
 				ListaEI.add(vector);
 				vector=MultipleChoice.Calcular_Percent_ExtravertionVsIntravertion(slider12.getValue());
@@ -650,6 +652,8 @@ public class UI {
 				vector=MultipleChoice.Calcular_Percent_JudgingVsPerceiving(slider19.getValue());
 				ListaJP.add(vector);
 				vector=MultipleChoice.Calcular_Percent_JudgingVsPerceiving(slider22.getValue());
+				ListaJP.add(vector);
+				vector=MultipleChoice.Calcular_Percent_JudgingVsPerceiving(slider27.getValue());
 				ListaJP.add(vector);
 				System.out.println(MultipleChoice.Evaluar_Pregunta_JudgingVsPerceiving(ListaJP));
 				System.out.println("---------------------");
