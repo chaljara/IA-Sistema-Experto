@@ -1,7 +1,6 @@
 package expert.system.cars;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 
 public class MultipleChoice {
 
@@ -74,8 +73,10 @@ public static String Evaluar_Pregunta_ExtravertionVsIntravertion(ArrayList<doubl
 		   totalpintro=totalpintro+vector[1];
 		}
 
-			if (totalpextro>totalpintro)
+			if (totalpextro>totalpintro){
 				return "Extravertion";
+				
+			}
 
 		return "Introvertion";
 

@@ -1,118 +1,173 @@
 package rules
 
-import expert.system.cars.Personalities
-import expert.system.cars.CarSuggest
+import expert.system.cars.Personality
+import expert.system.cars.InfoResult
+import expert.system.drools.droolsTest
 
 dialect "java"
 
 rule "Recommend by Architect personality"
 	when
-		Car: CarSuggest(type==Personalities.ARCHITECT)
+		info: InfoResult(personality==Personality.ARCHITECT)
 	then
-		Car.setModelCar("SUV modelo Jeep");
+		info.setStyleType("SUV");
+		info.setTraits("INTJ");
+		info.setPersonalityInfo("Your personality is ARCHITECT\nImaginative and strategic thinkers, with a plan for everything.\n\n"
+								+"Because of your imagination. you can sometimes end up off life's beaten path. You're prepared for"
+								+" city and back roads alike and always have a plan of action that guarantees a good time or a great story.");
 end
 
 rule "Recommend by Logician personality"
 	when
-		Car: CarSuggest(type==Personalities.LOGICIAN)
+		info: InfoResult(personality==Personality.LOGICIAN)
 	then
-		Car.setModelCar("SUV modelo Toyota 4Runner");
+		info.setStyleType("SUV");
+		info.setTraits("INTP");
+		info.setPersonalityInfo("Your personality is LOGICIAN\nInnovative inventors with an unquenchable thirst for knowledge.\n\n"
+								+"With your innovative personality, it's likely that you'll need a vehicle for all "
+								+"climates to quench your thirst for knowledge and exploration");
 end
 
 rule "Recommend by Commander personality"
 	when
-		Car: CarSuggest(type==Personalities.COMMANDER)
+		info: InfoResult(personality==Personality.COMMANDER)
 	then
-		Car.setModelCar("Coche electrico modelo Tesla");
+		info.setStyleType("Hybrid/Electric");
+		info.setTraits("ENTJ");
+		info.setPersonalityInfo("Your personality is COMMANDER\nBold. imaginative and strong willed leaders, always finding a way or making one.\n\n"
+		                              +"Your bold personality draws people to you. Your imagination and determination makes you a stand out leader. There "
+										+"aren't many like you. and that's because you command to be at the top.");
 end
 
 rule "Recommend by Debater personality"
 	when
-		Car: CarSuggest(type==Personalities.DEBATER)
+		info: InfoResult(personality==Personality.DEBATER)
 	then
-		Car.setModelCar("Hatchback");
+		info.setStyleType("Hatchback");
+		info.setTraits("INTP");
+		info.setPersonalityInfo("Your personality is DEBATER\nSmart and curious thinkers who cannot resist an intellectual challenge.\n\n"
+		                              +"You're up for seeing change and your vehicle reflects your practical. intellectual nature. "
+		                              +"You have a fun personality and are unapologetically yourself.");
 end
 
 rule "Recommend by Advocate personality"
 	when
-		Car: CarSuggest(type==Personalities.ADVOCATE)
+		info: InfoResult(personality==Personality.ADVOCATE)
 	then
-		Car.setModelCar("Todo terreno estilo Land Rover");
+		info.setStyleType("Pickup");
+		info.setTraits("INFJ");
+		info.setPersonalityInfo("Your personality is ADVOCATE\nQuiet and mystical, yet very inspiring and tireless idealists.\n\n"
+		                              +"Your features inspire others and make you a quiet, but strong leader.");
 end
 
 rule "Recommend by Mediator personality"
 	when
-		Car: CarSuggest(type==Personalities.MEDIATOR)
+		info: InfoResult(personality==Personality.MEDIATOR)
 	then
-		Car.setModelCar("Minivan");
+		info.setStyleType("Wagon"); 
+		info.setTraits("INFP");
+		info.setPersonalityInfo("Your personality is MEDIATOR\nPoetic, kind and altruistic people. always eager to help a good cause.\n\n"
+		                              +"You are always up for a road trip or adventure with your friends. There's something poetic and nostalgic about your "
+										+"lifestyle. which matches your ride completely.");
 end
 
 rule "Recommend by PROTAGONIST personality"
 	when
-		Car: CarSuggest(type==Personalities.PROTAGONIST)
+		info: InfoResult(personality==Personality.PROTAGONIST)
 	then
-		Car.setModelCar("Auto deportivo");
+		info.setStyleType("Sport");
+		info.setTraits("ENFJ");
+		info.setPersonalityInfo("Your personality is PROTAGONIST\nCharismatic and inspiring leaders, able to mesmerize their listeners.\n\n"
+		                              +"You demand attention from your peers but don't boast. They look to you for inspiration and admire your leadership abilities.");
 end
 
 rule "Recommend by CAMPAIGNER personality"
 	when
-		Car: CarSuggest(type==Personalities.CAMPAIGNER)
+		info: InfoResult(personality==Personality.CAMPAIGNER)
 	then
-		Car.setModelCar("Auto compacto");
+		info.setStyleType("Compact");
+		info.setTraits("ENFP");
+		info.setPersonalityInfo("Your personality is CAMPAIGNER\nEnthusiastic, creative and sociable free spirits, who can always find "
+								+"a reason to smile.\n\nYour creative spirit shines through and you're constantly seen waving to other bug-drivers in the area.");
 end
-		
-rule "Recommend by LOGISTICIAN personality"
+
+rule "Recommend by LOGISTICIAN personality"								
 	when
-		Car: CarSuggest(type==Personalities.LOGISTICIAN)
+		info: InfoResult(personality==Personality.LOGISTICIAN)
 	then
-		Car.setModelCar("Auto tipo Sedan");
+		info.setStyleType("Sedan");
+		info.setTraits("ISTJ");
+		info.setPersonalityInfo("Your personality is LOGISTICIAN\nPractical and fact-minded individuals whose reliability cannot be doubted. "
+								+"The benefits appeal to your practicality");
 end
 
 rule "Recommend by DEFENDER personality"
 	when
-		Car: CarSuggest(type==Personalities.DEFENDER)
+		info: InfoResult(personality==Personality.DEFENDER)
 	then
-		Car.setModelCar("auto todo terreno como la Ford Expdition");
+		info.setStyleType("Pickup");
+		info.setTraits("ISFJ");
+		info.setPersonalityInfo("Your personality is DEFENDER\nVery dedicated and warm protectors. always ready to defend their loved ones. "
+								+"You're a family person. who wants reliability and protection. You'll find that in this large. accommodating vehicle for sure.");
 end
 
 rule "Recommend by EXECUTIVE personality"
 	when
-		Car: CarSuggest(type==Personalities.EXECUTIVE)
+		info: InfoResult(personality==Personality.EXECUTIVE)
 	then
-		Car.setModelCar("Auto lujoso");
+		info.setStyleType("Luxury");
+		info.setTraits("ESTJ");
+		info.setPersonalityInfo("Your personality is EXECUTIVE\nExcellent administrators. unsurpassed at managing things or people. "
+								+"You can manage just about any situation you're faced with because of your professional. executive nature. People are "
+								+"drawn to your professional. accommodating ways.");
 end
 
 rule "Recommend by CONSUL personality"
 	when
-		Car: CarSuggest(type==Personalities.CONSUL)
+		info: InfoResult(personality==Personality.CONSUL)
 	then
-		Car.setModelCar("Camioneta, ejemplo: Ford F-150");
+		info.setStyleType("Pickup");
+		info.setTraits("ESFJ");
+		info.setPersonalityInfo("Your personality is CONSUL\nExtraordinarily caring. social, and popular people, always eager to help. "
+								+"You're always prepared and ready for whatever you and your friends need.");
 end
 
 rule "Recommend by VIRTUOSO personality"
 	when
-		Car: CarSuggest(type==Personalities.VIRTUOSO)
+		info: InfoResult(personality==Personality.VIRTUOSO)
 	then
-		Car.setModelCar("Auto deportivo, como un Camaro");
+		info.setStyleType("Sport");
+		info.setTraits("ISTP");
+		info.setPersonalityInfo("Your personality is VIRTUOSO\nBold and practical experimenters, masters of all kinds of tools. "
+								+"You can have fun driving this while also restoring it to its former glory.");
 end
 
 rule "Recommend by ADVENTURER personality"
 	when
-		Car: CarSuggest(type==Personalities.ADVENTURER)
+		info: InfoResult(personality==Personality.ADVENTURER)
 	then
-		Car.setModelCar("Camioneta, ejemplo: Ford F-150");
+		info.setStyleType("Pickup");
+		info.setTraits("ISFP");
+		info.setPersonalityInfo("Your personality is ADVENTURER\nFlexible and charming artists. always ready to explore and experience something new. "
+								+"This uniquely shaped car offers just what you need and the charm to lure your friends into joining you on your explorations.");
 end
 
 rule "Recommend by ENTREPRENEUR personality"
 	when
-		Car: CarSuggest(type==Personalities.ENTREPRENEUR)
+		info: InfoResult(personality==Personality.ENTREPRENEUR)
 	then
-		Car.setModelCar("Auto SUV");
+		info.setStyleType("SUV");
+		info.setTraits("ESTP");
+		info.setPersonalityInfo("Your personality is ENTREPRENEUR\nSmart. energetic and very perceptive people. who truly enjoy living on the edge. "
+								+"While you enjoy living on the edge. your strong mind still controls most your life choices, because you have the option to play it safe or take the top down and live a little.");
 end
 
 rule "Recommend by ENTERTAINER personality"
 	when
-		Car: CarSuggest(type==Personalities.ENTERTAINER)
+		info: InfoResult(personality==Personality.ENTERTAINER)
 	then
-		Car.setModelCar("Auto deportivo como Ford Mustang");
+		info.setStyleType("Sport");
+		info.setTraits("ESFP");
+		info.setPersonalityInfo("Your personality is ENTERTAINER\nSpontaneous, energetic and enthusiastic people, life is never boring around them. "
+								+"Your affinity for adventure and spontaneity reveals that you need a ride to support your energy.");
 end

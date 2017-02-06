@@ -5,25 +5,30 @@ import org.kie.api.runtime.KieContainer;
 import org.kie.api.runtime.KieSession;
 import org.kie.api.runtime.rule.FactHandle;
 
-import expert.system.cars.Personalities;
-import expert.system.cars.CarSuggest;
+import expert.system.cars.InfoResult;
+import expert.system.cars.Personality;
 
 public class droolsTest {
 	
-	public static void recomendar_vehiculo(CarSuggest Car){
+	public static InfoResult recommendACarByPersonality(Personality personality){
+		InfoResult info = null;
 		try {
 			KieServices ks = KieServices.Factory.get();
 			KieContainer kContainer = ks.getKieClasspathContainer();
-			//Get the session named kseesion-rule that we defined in kmodule.xml above.
-			//Also by default the session returned is always stateful. 
 			KieSession kSession = kContainer.newKieSession("ksession-rule");
 			FactHandle fact1;
-			fact1 = kSession.insert(Car);
+			
+			info = new InfoResult(personality);
+			
+			fact1 = kSession.insert(info);
 			kSession.fireAllRules();
-			System.out.println(Car.getModelCar());
+
+			return info;
+			
 		} catch (Throwable t) {
 			t.printStackTrace();
 		}
+		return info;
 		
 	}
 }

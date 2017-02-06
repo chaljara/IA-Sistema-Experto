@@ -1,0 +1,80 @@
+1,Kia,Sportage,SUV,2016,26995,5,1354
+2,Tesla,X 75D,SUV,2016,94500,5-7,2390
+3,Toyota,RAV4 2.0,SUV,2016,35995,5,1510
+4,Volkswagen,Tiguan 1.4,SUV,2016,31590,5,1640
+5,Audi,Q3,SUV,2015,37650,5,1360
+6,Audi,Q7,SUV,2015,83590,5-7,1970
+7,BMW,X1,SUV,2015,38663,5,1400
+8,Honda,CR-V Comfort,SUV,2015,35950,5,1545
+9,Hyundai,Tucson,SUV,2015,29995,5,1279
+10,Mazda CX-3,SUV,2015,30490,5,1175
+11,BMW,218D Crabio,Convertible,2015,43387,4,1515
+12,Chevrolet,Corvette,Convertible,2014,127995,2,1530
+13,Ferrari,California T,Convertible,2014,223348,4,1625
+14,Porsche,918 Spyder,Convertible,2014,780450,2,1660
+15,Audi,RS5,Convertible,2013,144910,4,1895
+16,Infiniti,Q60 Cabrio,Convertible,2013,106990,5,1898
+17,Jaguar,F-Type V6,Convertible,2013,107200,2,1597
+18,Opel,Cascada,Convertible,2013,35395,4,1601
+19,Mercedes Benz,SL,Convertible,2013,105100,2,1585
+20,Porsche,Boxster,Convertible,2013,76351,2,1285
+21,Infiniti,Q60 GT,Coupe,2013,81421,5,1665
+22,Renault,Laguna,Coupe,2012,33990,5,1388
+23,Subaru,BRZ,Coupe,2012,38995,4,1177
+24,Toyota,GT86,Coupe,2012,47915,4,1205
+25,Peugeot,RCZ,Coupe,2010,34250,4,1250
+26,Mitsubishi,Space Star,Hatchback,2016,11790,5,820
+27,Volvo,V40,Hatchback,2016,33695,5,1292
+28,Citroen,C4 BlueHDi,Hatchback,2015,25490,5,1180
+29,Hyundai,i30,Hatchback,2015,23495,5,1264
+30,Kia,Rio,Hatchback,2016,19495,5,1100
+31,Lexus,GS 300h,Sedan,2016,46795,5,1705
+32,Toyota,Avensis,Sedan,2015,33395,5,1435
+33,Ford,Focus,Sedan,2014,19775,5,1203
+34,Jaguar,XE,Sedan,2014,55550,5,1530
+35,Infiniti,Q70,Sedan,2014,84215,5,1845
+36,Kia,Ceed,Wagon,2015,21195,5,1205
+37,Skoda,Superb Combi,Wagon,2015,34670,5,1345
+38,Subaru,Outback,Wagon,2015,46995,5,1651
+39,Peugeot,508 SW,Wagon,2015,35360,5,1405
+40,Opel,Insignia Country Tourer,Wagon,2016,39745,5,1750
+41,Ford,S-MAX,MPV,2015,41590,5-7,1640
+42,Volkswagen,Sharan,MPV,2015.47390,5,1655
+43,Citroen,C3 Picasso,MPV,2015,23440,5,1280
+44,Kia,Carens,MPV,2013,28695,7,1383
+45,Renault,Grand Scenic,MPV,2013,35590,5,1405
+46,Chevrolet,Silverado,Pickup,2015,53415,6,1845
+47,Ford,F-350,Pickup,2015,52685,6,1890
+48,Honda,Ridgeline,Pickup,2016,29475,6,1665
+49,Nissan,Frontier,Pickup,2016,36110,5,1770
+50,Toyota,Tacoma,Pickup,2016,28180,5,1541
+51,Chevrolet,Camaro,Sport,2016,25905,2,1102
+52,Dodge,Challenger,Sport,2016,26995,4,1240
+53,Hyundai,Genesis,Sport,2016,26950,2,1340
+54,Nissan,370Z,Sport,2016,29990,2,1050
+55,Subaru,BRZ,Sport,2016,25495,2,1095
+56,Audi,A4,Luxury,2016,34900,5,1450
+57,BMW,3-Series,Luxury,2016,33450,4,1550
+58,Cadillac,ELR,Luxury,2016,65000,2,1420
+59,Jaguar,XE,Luxury,2016,34900,4,1507
+60,Lexus,IS2000T,Luxury,2016,37325,4,1330
+61,Chevrolet,Volt,Hybrid/Electric,2016,33220,4,1640
+62,Ford,Ford Electric,Hybrid/Electric,2015,29120,4,1410
+63,Volksagen,Jetta Hybrid,Hybrid/Electric,2015,31120,4,1220
+64,Toyota,Prius C,Hibrid/Electric,2016,19560,4,980
+65,Honda,Civic Hybrid,,Hibrid/Electric,2016,24735,4,1327
+66,Chevrolet,Impala,Midsize,2016,27300,4,1590
+67,Ford,Taurus,Midsize,2016,27345,4,1475
+68,Hyundai,Azera,Midsize,2014,34100,4,1390
+69,Hyundai,Genesis,Midsize,2014,38750,4,1380
+70,Kia,Cadenza,Midsize,2014,32990,4,1340
+71,Fiat,500L,Compact,2015,20995,4,880
+72,Honda,Fit,Compact,2016,15990,4,997
+73,Mini,Cooper Clubman,Compact,2015,24500,4,850
+74,Mitsubishi,Mirage,Compact,2015,12995,4,904
+75,Nissan Versa Note,Compact,2014,14230,4,940
+76,Chevrolet,Spark,Compact,2014,13000,4,890
+77,Ford,Fiesta,Compact,2015,13660,4,867
+78,Kia,Rio 5,Compact,2015,15495,4,1050
+79,Toyota,Yaris,Compact,2015,15250,4,1190
+80,Volkswagen,Beetle,Compact,2013,19995,4,1110

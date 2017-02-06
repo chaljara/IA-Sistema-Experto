@@ -44,68 +44,68 @@ public class Quiz {
 		return questions;
 	} 
 	
-public static Personalities DefinirPersonalidad(String EI, String SN, String TF, String JP){
+public static Personality DefinirPersonalidad(String EI, String SN, String TF, String JP){
 		
 		if(EI.equals("Introvertion") && SN.equals("Intuition") && TF.equals("Thinking")){
 			if(JP.equals("Judging"))
-				return Personalities.ARCHITECT;
+				return Personality.ARCHITECT;
 			else if(JP.equals("Perceiving"))
-				return Personalities.LOGICIAN;
+				return Personality.LOGICIAN;
 		
 		} else
 		
 		if(EI.equals("Extravertion") && SN.equals("Intuition") && TF.equals("Thinking")){
 			if(JP.equals("Judging"))
-				return Personalities.COMMANDER;
+				return Personality.COMMANDER;
 			else if(JP.equals("Perceiving"))
-				return Personalities.DEBATER;
+				return Personality.DEBATER;
 		
 		} else
 		
 		if(EI.equals("Introvertion") && SN.equals("Intuition") && TF.equals("Feeling")){
 			if(JP.equals("Judging"))
-				return Personalities.ADVOCATE;
+				return Personality.ADVOCATE;
 			else if(JP.equals("Perceiving"))
-				return Personalities.MEDIATOR;
+				return Personality.MEDIATOR;
 		
 		} else
 		
 		if(EI.equals("Extravertion") && SN.equals("Intuition") && TF.equals("Feeling")){
 			if(JP.equals("Judging"))
-				return Personalities.PROTAGONIST;
+				return Personality.PROTAGONIST;
 			else if(JP.equals("Perceiving"))
-				return Personalities.CAMPAIGNER;
+				return Personality.CAMPAIGNER;
 		} else
 		
 		if(EI.equals("Introvertion") && SN.equals("Sensing") && JP.equals("Judging")){
 			if(TF.equals("Thinking"))
-				return Personalities.LOGISTICIAN;
+				return Personality.LOGISTICIAN;
 			else if(TF.equals("Feeling"))
-				return Personalities.DEFENDER;
+				return Personality.DEFENDER;
 		
 		} else
 		
 		if(EI.equals("Extravertion") && SN.equals("Sensing") && JP.equals("Judging")){
 			if(TF.equals("Thinking"))
-				return Personalities.EXECUTIVE;
+				return Personality.EXECUTIVE;
 			else if(TF.equals("Feeling"))
-				return Personalities.CONSUL;
+				return Personality.CONSUL;
 		
 		} else
 		
 		if(EI.equals("Introvertion") && SN.equals("Sensing") && JP.equals("Perceiving")){
 			if(TF.equals("Thinking"))
-				return Personalities.VIRTUOSO;
+				return Personality.VIRTUOSO;
 			else if(TF.equals("Feeling"))
-				return Personalities.ADVENTURER;
+				return Personality.ADVENTURER;
 		
 		} else
 		
 		if(EI.equals("Extravertion") && SN.equals("Sensing") && JP.equals("Perceiving")){
 			if(TF.equals("Thinking"))
-				return Personalities.ENTREPRENEUR;
+				return Personality.ENTREPRENEUR;
 			else if(TF.equals("Feeling"))
-				return Personalities.ENTERTAINER;
+				return Personality.ENTERTAINER;
 		}
 	
 		

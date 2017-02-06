@@ -3,12 +3,12 @@ package expert.system.cars;
 public class CarSuggest {
 
 	private String modelCar;
-	private Personalities type;
+	private Personality type;
 	private Quiz survey;
 	
 	public CarSuggest(){}
 	
-	public CarSuggest(String modelCar, Personalities type, Quiz survey) {
+	public CarSuggest(String modelCar, Personality type, Quiz survey) {
 		this.modelCar = modelCar;
 		this.type = type;
 		this.survey = survey;
@@ -18,7 +18,7 @@ public class CarSuggest {
 		return modelCar;
 	}
 
-	public Personalities getType() {
+	public Personality getType() {
 		return type;
 	}
 
@@ -30,7 +30,7 @@ public class CarSuggest {
 		this.modelCar = modelCar;
 	}
 
-	public void setType(Personalities type) {
+	public void setType(Personality type) {
 		this.type = type;
 	}
 
