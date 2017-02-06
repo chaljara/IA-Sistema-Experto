@@ -33,5 +33,9 @@ public class CarSuggest {
 	public void setType(Personalities type) {
 		this.type = type;
 	}
+
+	public void setSurvey(Quiz survey) {
+		this.survey = survey;
+	}
 		
 }

@@ -9,25 +9,18 @@ import expert.system.cars.Personalities;
 import expert.system.cars.CarSuggest;
 
 public class droolsTest {
-
-	public static final void main(String[] args){
-		
+	
+	public static void recomendar_vehiculo(CarSuggest Car){
 		try {
 			KieServices ks = KieServices.Factory.get();
 			KieContainer kContainer = ks.getKieClasspathContainer();
 			//Get the session named kseesion-rule that we defined in kmodule.xml above.
 			//Also by default the session returned is always stateful. 
 			KieSession kSession = kContainer.newKieSession("ksession-rule");
-
-			CarSuggest car = new CarSuggest("", Personalities.ENTREPRENEUR, null);
-
 			FactHandle fact1;
-
-			fact1 = kSession.insert(car);
+			fact1 = kSession.insert(Car);
 			kSession.fireAllRules();
-
-			System.out.println(car.getModelCar());
-
+			System.out.println(Car.getModelCar());
 		} catch (Throwable t) {
 			t.printStackTrace();
 		}

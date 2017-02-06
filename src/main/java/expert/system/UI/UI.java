@@ -33,10 +33,12 @@ import java.awt.Color;
 import javax.swing.border.CompoundBorder;
 import javax.swing.border.LineBorder;
 
+import expert.system.cars.CarSuggest;
 import expert.system.cars.MultipleChoice;
 import expert.system.cars.Personalities;
 import expert.system.cars.Question;
 import expert.system.cars.Quiz;
+import expert.system.drools.droolsTest;
 
 import javax.swing.JTextField;
 
@@ -56,6 +58,7 @@ public class UI {
 	private JTextField txtDisagree;
 	private JTextField textField;
 	private Quiz Survey;
+	private CarSuggest Car;
 
 	/**
 	 * Launch the application.
@@ -93,6 +96,9 @@ public class UI {
 		
 		/*******/
 		Survey = new Quiz();
+		Car = new CarSuggest();
+		Car.setSurvey(Survey);
+		Car.setModelCar("");
 		/*******/
 		
 		panelObj = new JPanel();
@@ -391,7 +397,7 @@ public class UI {
 		JTextPane txtpnYouFind_1 = new JTextPane();
 		txtpnYouFind_1.setEditable(false);
 		txtpnYouFind_1.setFont(new Font("Cambria", Font.PLAIN, 16));
-		txtpnYouFind_1.setText("3. You do not find it easy to stay relaxed and focused ");
+		txtpnYouFind_1.setText(questions.get(2).getQuestion());
 		panelQuestions.add(txtpnYouFind_1);
 		
 		JTextPane txtpnYouDo = new JTextPane();
@@ -405,14 +411,14 @@ public class UI {
 		JTextPane txtpnYouFeel = new JTextPane();
 		txtpnYouFeel.setEditable(false);
 		panelQuestions.add(txtpnYouFeel);
-		txtpnYouFeel.setText("5. You do not feel superior to other people");
+		txtpnYouFeel.setText(questions.get(4).getQuestion());
 		txtpnYouFeel.setFont(new Font("Cambria", Font.PLAIN, 16));
 		
 		JTextPane txtpnBeingOrganized = new JTextPane();
 		txtpnBeingOrganized.setEditable(false);
 		txtpnBeingOrganized.setBackground(SystemColor.control);
 		panelQuestions.add(txtpnBeingOrganized);
-		txtpnBeingOrganized.setText("6. Being organized is less important to you than being adaptable");
+		txtpnBeingOrganized.setText(questions.get(5).getQuestion());
 		txtpnBeingOrganized.setFont(new Font("Cambria", Font.PLAIN, 16));
 		
 		JTextPane txtpnWinningA = new JTextPane();
@@ -431,7 +437,7 @@ public class UI {
 		
 		JTextPane txtpnYouConsider = new JTextPane();
 		txtpnYouConsider.setEditable(false);
-		txtpnYouConsider.setText("9. You consider yourself more creative than practical");
+		txtpnYouConsider.setText(questions.get(8).getQuestion());
 		txtpnYouConsider.setFont(new Font("Cambria", Font.PLAIN, 16));
 		panelQuestions.add(txtpnYouConsider);
 		
@@ -444,7 +450,7 @@ public class UI {
 		
 		JTextPane txtpnYourTravel = new JTextPane();
 		txtpnYourTravel.setEditable(false);
-		txtpnYourTravel.setText("11. Your travel plans are not well thought out");
+		txtpnYourTravel.setText(questions.get(10).getQuestion());
 		txtpnYourTravel.setFont(new Font("Cambria", Font.PLAIN, 16));
 		panelQuestions.add(txtpnYourTravel);
 		
@@ -465,19 +471,19 @@ public class UI {
 		JTextPane txtpnInA = new JTextPane();
 		txtpnInA.setEditable(false);
 		txtpnInA.setBackground(SystemColor.control);
-		txtpnInA.setText("14. In a discussion, people’s sensitivities should be more important than truth.");
+		txtpnInA.setText(questions.get(13).getQuestion());
 		txtpnInA.setFont(new Font("Cambria", Font.PLAIN, 16));
 		panelQuestions.add(txtpnInA);
 		
 		JTextPane txtpnYouRarely = new JTextPane();
 		txtpnYouRarely.setEditable(false);
-		txtpnYouRarely.setText("15. You often worry about how your actions affect other people");
+		txtpnYouRarely.setText(questions.get(14).getQuestion());
 		txtpnYouRarely.setFont(new Font("Cambria", Font.PLAIN, 16));
 		panelQuestions.add(txtpnYouRarely);
 		
 		JTextPane txtpnYouRarely_1 = new JTextPane();
 		txtpnYouRarely_1.setBackground(SystemColor.control);
-		txtpnYouRarely_1.setText("16. You often get carried away by fantasies and ideas");
+		txtpnYouRarely_1.setText(questions.get(15).getQuestion());
 		txtpnYouRarely_1.setName("Q1");
 		txtpnYouRarely_1.setFont(new Font("Cambria", Font.PLAIN, 16));
 		txtpnYouRarely_1.setEditable(false);
@@ -492,13 +498,13 @@ public class UI {
 		JTextPane txtpnYouDo_2 = new JTextPane();
 		txtpnYouDo_2.setEditable(false);
 		txtpnYouDo_2.setBackground(SystemColor.control);
-		txtpnYouDo_2.setText("18. You often let other people influence your actions");
+		txtpnYouDo_2.setText(questions.get(17).getQuestion());
 		txtpnYouDo_2.setFont(new Font("Cambria", Font.PLAIN, 16));
 		panelQuestions.add(txtpnYouDo_2);
 		
 		JTextPane txtpnYourDreams = new JTextPane();
 		txtpnYourDreams.setEditable(false);
-		txtpnYourDreams.setText("19. Your dreams do not tend to focus on the real world and its events");
+		txtpnYourDreams.setText(questions.get(18).getQuestion());
 		txtpnYourDreams.setFont(new Font("Cambria", Font.PLAIN, 16));
 		panelQuestions.add(txtpnYourDreams);
 		
@@ -519,7 +525,7 @@ public class UI {
 		JTextPane txtpnYouAre = new JTextPane();
 		txtpnYouAre.setEditable(false);
 		txtpnYouAre.setBackground(SystemColor.control);
-		txtpnYouAre.setText("22. You are not a reserved and quiet person");
+		txtpnYouAre.setText(questions.get(21).getQuestion());
 		txtpnYouAre.setFont(new Font("Cambria", Font.PLAIN, 16));
 		panelQuestions.add(txtpnYouAre);
 		
@@ -539,7 +545,7 @@ public class UI {
 		
 		JTextPane txtpnBeingRight = new JTextPane();
 		txtpnBeingRight.setEditable(false);
-		txtpnBeingRight.setText("25. Being right is less important than being cooperative when it comes to teamwork");
+		txtpnBeingRight.setText(questions.get(24).getQuestion());
 		txtpnBeingRight.setFont(new Font("Cambria", Font.PLAIN, 16));
 		panelQuestions.add(txtpnBeingRight);
 		
@@ -572,7 +578,7 @@ public class UI {
 		JTextPane txtpnYouOften_4 = new JTextPane();
 		txtpnYouOften_4.setEditable(false);
 		txtpnYouOften_4.setBackground(SystemColor.control);
-		txtpnYouOften_4.setText("30. You do not take initiative in social situations");
+		txtpnYouOften_4.setText(questions.get(29).getQuestion());
 		txtpnYouOften_4.setFont(new Font("Cambria", Font.PLAIN, 16));
 		panelQuestions.add(txtpnYouOften_4);
 		
@@ -666,8 +672,8 @@ public class UI {
 				
 				Personalities pfinal=Quiz.DefinirPersonalidad(EI, SN, TF, JP);
 				System.out.println(pfinal.toString());
-				
-				
+				Car.setType(pfinal);
+				droolsTest.recomendar_vehiculo(Car);
 			}
 		});
 		btnResults.setBounds(962, 240, 102, 50);
