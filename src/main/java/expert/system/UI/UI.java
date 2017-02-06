@@ -33,6 +33,8 @@ import java.awt.Color;
 import javax.swing.border.CompoundBorder;
 import javax.swing.border.LineBorder;
 
+import expert.system.cars.MultipleChoice;
+import expert.system.cars.Personalities;
 import expert.system.cars.Question;
 import expert.system.cars.Quiz;
 
@@ -107,7 +109,7 @@ public class UI {
 		panelQuiz.add(panelSlider);
 		panelSlider.setLayout(null);
 		
-		JSlider slider1 = new JSlider();
+		final JSlider slider1 = new JSlider();
 		slider1.setBounds(0, -1, 200, 23);
 		slider1.setBackground(Color.WHITE);
 		slider1.setMajorTickSpacing(1);
@@ -116,7 +118,7 @@ public class UI {
 		slider1.setMinimum(1);
 		panelSlider.add(slider1);
 		
-		JSlider slider2 = new JSlider();
+		final JSlider slider2 = new JSlider();
 		slider2.setBounds(0, 21, 200, 23);
 		slider2.setValue(4);
 		slider2.setMinimum(1);
@@ -124,7 +126,7 @@ public class UI {
 		slider2.setMajorTickSpacing(1);
 		panelSlider.add(slider2);
 		
-		JSlider slider3 = new JSlider();
+		final JSlider slider3 = new JSlider();
 		slider3.setBounds(0, 43, 200, 23);
 		slider3.setBackground(SystemColor.window);
 		slider3.setValue(4);
@@ -133,7 +135,7 @@ public class UI {
 		slider3.setMajorTickSpacing(1);
 		panelSlider.add(slider3);
 		
-		JSlider slider4 = new JSlider();
+		final JSlider slider4 = new JSlider();
 		slider4.setBounds(0, 65, 200, 23);
 		slider4.setValue(4);
 		slider4.setMinimum(1);
@@ -141,7 +143,7 @@ public class UI {
 		slider4.setMajorTickSpacing(1);
 		panelSlider.add(slider4);
 		
-		JSlider slider5 = new JSlider();
+		final JSlider slider5 = new JSlider();
 		slider5.setBounds(0, 87, 200, 23);
 		slider5.setBackground(SystemColor.window);
 		slider5.setValue(4);
@@ -150,7 +152,7 @@ public class UI {
 		slider5.setMajorTickSpacing(1);
 		panelSlider.add(slider5);
 		
-		JSlider slider6 = new JSlider();
+		final JSlider slider6 = new JSlider();
 		slider6.setBounds(0, 109, 200, 23);
 		slider6.setValue(4);
 		slider6.setMinimum(1);
@@ -158,7 +160,7 @@ public class UI {
 		slider6.setMajorTickSpacing(1);
 		panelSlider.add(slider6);
 		
-		JSlider slider7 = new JSlider();
+		final JSlider slider7 = new JSlider();
 		slider7.setBounds(0, 131, 200, 23);
 		slider7.setBackground(SystemColor.window);
 		slider7.setValue(4);
@@ -167,7 +169,7 @@ public class UI {
 		slider7.setMajorTickSpacing(1);
 		panelSlider.add(slider7);
 		
-		JSlider slider8 = new JSlider();
+		final JSlider slider8 = new JSlider();
 		slider8.setBounds(0, 153, 200, 23);
 		slider8.setValue(4);
 		slider8.setMinimum(1);
@@ -175,7 +177,7 @@ public class UI {
 		slider8.setMajorTickSpacing(1);
 		panelSlider.add(slider8);
 		
-		JSlider slider9 = new JSlider();
+		final JSlider slider9 = new JSlider();
 		slider9.setBounds(0, 175, 200, 23);
 		slider9.setBorder(null);
 		slider9.setBackground(SystemColor.window);
@@ -185,7 +187,7 @@ public class UI {
 		slider9.setMajorTickSpacing(1);
 		panelSlider.add(slider9);
 		
-		JSlider slider10 = new JSlider();
+		final JSlider slider10 = new JSlider();
 		slider10.setBounds(0, 197, 200, 23);
 		slider10.setValue(4);
 		slider10.setMinimum(1);
@@ -193,7 +195,7 @@ public class UI {
 		slider10.setMajorTickSpacing(1);
 		panelSlider.add(slider10);
 		
-		JSlider slider11 = new JSlider();
+		final JSlider slider11 = new JSlider();
 		slider11.setBounds(0, 219, 200, 23);
 		slider11.setBackground(SystemColor.window);
 		slider11.setValue(4);
@@ -202,7 +204,7 @@ public class UI {
 		slider11.setMajorTickSpacing(1);
 		panelSlider.add(slider11);
 		
-		JSlider slider12 = new JSlider();
+		final JSlider slider12 = new JSlider();
 		slider12.setBounds(0, 241, 200, 23);
 		slider12.setValue(4);
 		slider12.setMinimum(1);
@@ -210,7 +212,7 @@ public class UI {
 		slider12.setMajorTickSpacing(1);
 		panelSlider.add(slider12);
 		
-		JSlider slider13 = new JSlider();
+		final JSlider slider13 = new JSlider();
 		slider13.setBounds(0, 263, 200, 23);
 		slider13.setBackground(SystemColor.window);
 		slider13.setValue(4);
@@ -219,7 +221,7 @@ public class UI {
 		slider13.setMajorTickSpacing(1);
 		panelSlider.add(slider13);
 		
-		JSlider slider14 = new JSlider();
+		final JSlider slider14 = new JSlider();
 		slider14.setBounds(0, 285, 200, 23);
 		slider14.setValue(4);
 		slider14.setMinimum(1);
@@ -227,7 +229,7 @@ public class UI {
 		slider14.setMajorTickSpacing(1);
 		panelSlider.add(slider14);
 		
-		JSlider slider15 = new JSlider();
+		final JSlider slider15 = new JSlider();
 		slider15.setBounds(0, 307, 200, 23);
 		slider15.setBackground(SystemColor.window);
 		slider15.setValue(4);
@@ -236,7 +238,7 @@ public class UI {
 		slider15.setMajorTickSpacing(1);
 		panelSlider.add(slider15);
 		
-		JSlider slider16 = new JSlider();
+		final JSlider slider16 = new JSlider();
 		slider16.setBounds(0, 329, 200, 23);
 		slider16.setValue(4);
 		slider16.setMinimum(1);
@@ -244,7 +246,7 @@ public class UI {
 		slider16.setMajorTickSpacing(1);
 		panelSlider.add(slider16);
 		
-		JSlider slider17 = new JSlider();
+		final JSlider slider17 = new JSlider();
 		slider17.setBounds(0, 351, 200, 23);
 		slider17.setBackground(SystemColor.window);
 		slider17.setValue(4);
@@ -253,7 +255,7 @@ public class UI {
 		slider17.setMajorTickSpacing(1);
 		panelSlider.add(slider17);
 		
-		JSlider slider18 = new JSlider();
+		final JSlider slider18 = new JSlider();
 		slider18.setBounds(0, 373, 200, 23);
 		slider18.setValue(4);
 		slider18.setMinimum(1);
@@ -261,7 +263,7 @@ public class UI {
 		slider18.setMajorTickSpacing(1);
 		panelSlider.add(slider18);
 		
-		JSlider slider19 = new JSlider();
+		final JSlider slider19 = new JSlider();
 		slider19.setBounds(0, 395, 200, 23);
 		slider19.setBackground(SystemColor.window);
 		slider19.setValue(4);
@@ -270,7 +272,7 @@ public class UI {
 		slider19.setMajorTickSpacing(1);
 		panelSlider.add(slider19);
 		
-		JSlider slider20 = new JSlider();
+		final JSlider slider20 = new JSlider();
 		slider20.setBounds(0, 417, 200, 23);
 		slider20.setValue(4);
 		slider20.setMinimum(1);
@@ -278,7 +280,7 @@ public class UI {
 		slider20.setMajorTickSpacing(1);
 		panelSlider.add(slider20);
 		
-		JSlider slider21 = new JSlider();
+		final JSlider slider21 = new JSlider();
 		slider21.setBounds(0, 439, 200, 23);
 		slider21.setBackground(SystemColor.window);
 		panelSlider.add(slider21);
@@ -287,7 +289,7 @@ public class UI {
 		slider21.setMaximum(7);
 		slider21.setMajorTickSpacing(1);
 		
-		JSlider slider22 = new JSlider();
+		final JSlider slider22 = new JSlider();
 		slider22.setBounds(0, 461, 200, 23);
 		panelSlider.add(slider22);
 		slider22.setValue(4);
@@ -295,7 +297,7 @@ public class UI {
 		slider22.setMaximum(7);
 		slider22.setMajorTickSpacing(1);
 		
-		JSlider slider23 = new JSlider();
+		final JSlider slider23 = new JSlider();
 		slider23.setBounds(0, 483, 200, 23);
 		slider23.setBackground(SystemColor.window);
 		panelSlider.add(slider23);
@@ -304,7 +306,7 @@ public class UI {
 		slider23.setMaximum(7);
 		slider23.setMajorTickSpacing(1);
 		
-		JSlider slider24 = new JSlider();
+		final JSlider slider24 = new JSlider();
 		slider24.setBounds(0, 505, 200, 23);
 		panelSlider.add(slider24);
 		slider24.setValue(4);
@@ -312,7 +314,7 @@ public class UI {
 		slider24.setMaximum(7);
 		slider24.setMajorTickSpacing(1);
 		
-		JSlider slider25 = new JSlider();
+		final JSlider slider25 = new JSlider();
 		slider25.setBounds(0, 527, 200, 23);
 		slider25.setBackground(SystemColor.window);
 		panelSlider.add(slider25);
@@ -321,7 +323,7 @@ public class UI {
 		slider25.setMaximum(7);
 		slider25.setMajorTickSpacing(1);
 		
-		JSlider slider26 = new JSlider();
+		final JSlider slider26 = new JSlider();
 		slider26.setBounds(0, 549, 200, 23);
 		slider26.setValue(4);
 		slider26.setMinimum(1);
@@ -329,7 +331,7 @@ public class UI {
 		slider26.setMajorTickSpacing(1);
 		panelSlider.add(slider26);
 		
-		JSlider slider27 = new JSlider();
+		final JSlider slider27 = new JSlider();
 		slider27.setBounds(0, 571, 200, 23);
 		slider27.setBackground(SystemColor.window);
 		slider27.setValue(4);
@@ -338,7 +340,7 @@ public class UI {
 		slider27.setMajorTickSpacing(1);
 		panelSlider.add(slider27);
 		
-		JSlider slider28 = new JSlider();
+		final JSlider slider28 = new JSlider();
 		slider28.setBounds(0, 593, 200, 23);
 		slider28.setValue(4);
 		slider28.setMinimum(1);
@@ -346,7 +348,7 @@ public class UI {
 		slider28.setMajorTickSpacing(1);
 		panelSlider.add(slider28);
 		
-		JSlider slider29 = new JSlider();
+		final JSlider slider29 = new JSlider();
 		slider29.setBounds(0, 615, 200, 23);
 		slider29.setBackground(SystemColor.window);
 		slider29.setValue(4);
@@ -355,7 +357,7 @@ public class UI {
 		slider29.setMajorTickSpacing(1);
 		panelSlider.add(slider29);
 		
-		JSlider slider30 = new JSlider();
+		final JSlider slider30 = new JSlider();
 		slider30.setBounds(0, 637, 200, 23);
 		slider30.setValue(4);
 		slider30.setMinimum(1);
@@ -389,7 +391,7 @@ public class UI {
 		JTextPane txtpnYouFind_1 = new JTextPane();
 		txtpnYouFind_1.setEditable(false);
 		txtpnYouFind_1.setFont(new Font("Cambria", Font.PLAIN, 16));
-		txtpnYouFind_1.setText(questions.get(2).getQuestion());
+		txtpnYouFind_1.setText("3. You do not find it easy to stay relaxed and focused ");
 		panelQuestions.add(txtpnYouFind_1);
 		
 		JTextPane txtpnYouDo = new JTextPane();
@@ -403,14 +405,14 @@ public class UI {
 		JTextPane txtpnYouFeel = new JTextPane();
 		txtpnYouFeel.setEditable(false);
 		panelQuestions.add(txtpnYouFeel);
-		txtpnYouFeel.setText(questions.get(4).getQuestion());
+		txtpnYouFeel.setText("5. You do not feel superior to other people");
 		txtpnYouFeel.setFont(new Font("Cambria", Font.PLAIN, 16));
 		
 		JTextPane txtpnBeingOrganized = new JTextPane();
 		txtpnBeingOrganized.setEditable(false);
 		txtpnBeingOrganized.setBackground(SystemColor.control);
 		panelQuestions.add(txtpnBeingOrganized);
-		txtpnBeingOrganized.setText(questions.get(5).getQuestion());
+		txtpnBeingOrganized.setText("6. Being organized is less important to you than being adaptable");
 		txtpnBeingOrganized.setFont(new Font("Cambria", Font.PLAIN, 16));
 		
 		JTextPane txtpnWinningA = new JTextPane();
@@ -429,7 +431,7 @@ public class UI {
 		
 		JTextPane txtpnYouConsider = new JTextPane();
 		txtpnYouConsider.setEditable(false);
-		txtpnYouConsider.setText(questions.get(8).getQuestion());
+		txtpnYouConsider.setText("9. You consider yourself more creative than practical");
 		txtpnYouConsider.setFont(new Font("Cambria", Font.PLAIN, 16));
 		panelQuestions.add(txtpnYouConsider);
 		
@@ -442,7 +444,7 @@ public class UI {
 		
 		JTextPane txtpnYourTravel = new JTextPane();
 		txtpnYourTravel.setEditable(false);
-		txtpnYourTravel.setText(questions.get(10).getQuestion());
+		txtpnYourTravel.setText("11. Your travel plans are not well thought out");
 		txtpnYourTravel.setFont(new Font("Cambria", Font.PLAIN, 16));
 		panelQuestions.add(txtpnYourTravel);
 		
@@ -463,19 +465,19 @@ public class UI {
 		JTextPane txtpnInA = new JTextPane();
 		txtpnInA.setEditable(false);
 		txtpnInA.setBackground(SystemColor.control);
-		txtpnInA.setText(questions.get(13).getQuestion());
+		txtpnInA.setText("14. In a discussion, people’s sensitivities should be more important than truth.");
 		txtpnInA.setFont(new Font("Cambria", Font.PLAIN, 16));
 		panelQuestions.add(txtpnInA);
 		
 		JTextPane txtpnYouRarely = new JTextPane();
 		txtpnYouRarely.setEditable(false);
-		txtpnYouRarely.setText(questions.get(14).getQuestion());
+		txtpnYouRarely.setText("15. You often worry about how your actions affect other people");
 		txtpnYouRarely.setFont(new Font("Cambria", Font.PLAIN, 16));
 		panelQuestions.add(txtpnYouRarely);
 		
 		JTextPane txtpnYouRarely_1 = new JTextPane();
 		txtpnYouRarely_1.setBackground(SystemColor.control);
-		txtpnYouRarely_1.setText(questions.get(15).getQuestion());
+		txtpnYouRarely_1.setText("16. You often get carried away by fantasies and ideas");
 		txtpnYouRarely_1.setName("Q1");
 		txtpnYouRarely_1.setFont(new Font("Cambria", Font.PLAIN, 16));
 		txtpnYouRarely_1.setEditable(false);
@@ -490,13 +492,13 @@ public class UI {
 		JTextPane txtpnYouDo_2 = new JTextPane();
 		txtpnYouDo_2.setEditable(false);
 		txtpnYouDo_2.setBackground(SystemColor.control);
-		txtpnYouDo_2.setText(questions.get(17).getQuestion());
+		txtpnYouDo_2.setText("18. You often let other people influence your actions");
 		txtpnYouDo_2.setFont(new Font("Cambria", Font.PLAIN, 16));
 		panelQuestions.add(txtpnYouDo_2);
 		
 		JTextPane txtpnYourDreams = new JTextPane();
 		txtpnYourDreams.setEditable(false);
-		txtpnYourDreams.setText(questions.get(18).getQuestion());
+		txtpnYourDreams.setText("19. Your dreams do not tend to focus on the real world and its events");
 		txtpnYourDreams.setFont(new Font("Cambria", Font.PLAIN, 16));
 		panelQuestions.add(txtpnYourDreams);
 		
@@ -517,7 +519,7 @@ public class UI {
 		JTextPane txtpnYouAre = new JTextPane();
 		txtpnYouAre.setEditable(false);
 		txtpnYouAre.setBackground(SystemColor.control);
-		txtpnYouAre.setText(questions.get(21).getQuestion());
+		txtpnYouAre.setText("22. You are not a reserved and quiet person");
 		txtpnYouAre.setFont(new Font("Cambria", Font.PLAIN, 16));
 		panelQuestions.add(txtpnYouAre);
 		
@@ -537,7 +539,7 @@ public class UI {
 		
 		JTextPane txtpnBeingRight = new JTextPane();
 		txtpnBeingRight.setEditable(false);
-		txtpnBeingRight.setText(questions.get(24).getQuestion());
+		txtpnBeingRight.setText("25. Being right is less important than being cooperative when it comes to teamwork");
 		txtpnBeingRight.setFont(new Font("Cambria", Font.PLAIN, 16));
 		panelQuestions.add(txtpnBeingRight);
 		
@@ -570,11 +572,104 @@ public class UI {
 		JTextPane txtpnYouOften_4 = new JTextPane();
 		txtpnYouOften_4.setEditable(false);
 		txtpnYouOften_4.setBackground(SystemColor.control);
-		txtpnYouOften_4.setText(questions.get(29).getQuestion());
+		txtpnYouOften_4.setText("30. You do not take initiative in social situations");
 		txtpnYouOften_4.setFont(new Font("Cambria", Font.PLAIN, 16));
 		panelQuestions.add(txtpnYouOften_4);
 		
 		JButton btnResults = new JButton("RESULTS");
+		btnResults.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				
+				ArrayList<double[]> ListaEI;
+				ListaEI=new ArrayList();
+				ArrayList<double[]>ListaSN;
+				ListaSN=new ArrayList();
+				ArrayList<double[]> ListaTF;
+				ListaTF=new ArrayList();
+				ArrayList<double[]>ListaJP;
+				ListaJP=new ArrayList();
+				double vector[]=new double[2];
+				String EI,SN,TF,JP;
+				
+				vector=MultipleChoice.Calcular_Percent_ExtravertionVsIntravertion(slider1.getValue());
+				ListaEI.add(vector);
+				vector=MultipleChoice.Calcular_Percent_ExtravertionVsIntravertion(slider4.getValue());
+				ListaEI.add(vector);
+				vector=MultipleChoice.Calcular_Percent_ExtravertionVsIntravertion(slider8.getValue());
+				ListaEI.add(vector);
+				vector=MultipleChoice.Calcular_Percent_ExtravertionVsIntravertion(slider12.getValue());
+				ListaEI.add(vector);
+				vector=MultipleChoice.Calcular_Percent_ExtravertionVsIntravertion(slider23.getValue());
+				ListaEI.add(vector);
+				vector=MultipleChoice.Calcular_Percent_ExtravertionVsIntravertion(slider28.getValue());
+				ListaEI.add(vector);
+				vector=MultipleChoice.Calcular_Percent_ExtravertionVsIntravertion(slider30.getValue());
+				ListaEI.add(vector);
+				EI=MultipleChoice.Evaluar_Pregunta_ExtravertionVsIntravertion(ListaEI);
+				System.out.println(EI);
+				
+				vector=MultipleChoice.Calcular_Percent_SensingVsIntuition(slider3.getValue());
+				ListaSN.add(vector);
+				vector=MultipleChoice.Calcular_Percent_SensingVsIntuition(slider16.getValue());
+				ListaSN.add(vector);
+				vector=MultipleChoice.Calcular_Percent_SensingVsIntuition(slider17.getValue());
+				ListaSN.add(vector);
+				vector=MultipleChoice.Calcular_Percent_SensingVsIntuition(slider20.getValue());
+				ListaSN.add(vector);
+				vector=MultipleChoice.Calcular_Percent_SensingVsIntuition(slider21.getValue());
+				ListaSN.add(vector);
+				vector=MultipleChoice.Calcular_Percent_SensingVsIntuition(slider24.getValue());
+				ListaSN.add(vector);
+				vector=MultipleChoice.Calcular_Percent_SensingVsIntuition(slider26.getValue());
+				ListaSN.add(vector);
+				vector=MultipleChoice.Calcular_Percent_SensingVsIntuition(slider29.getValue());
+				ListaSN.add(vector);
+				SN=MultipleChoice.Evaluar_Pregunta_SensingVsIntuition(ListaSN);
+				System.out.println(SN);
+				
+				vector=MultipleChoice.Calcular_Percent_ThinkingVsFeeling(slider2.getValue());
+				ListaTF.add(vector);
+				vector=MultipleChoice.Calcular_Percent_ThinkingVsFeeling(slider7.getValue());
+				ListaTF.add(vector);
+				vector=MultipleChoice.Calcular_Percent_ThinkingVsFeeling(slider10.getValue());
+				ListaTF.add(vector);
+				vector=MultipleChoice.Calcular_Percent_ThinkingVsFeeling(slider13.getValue());
+				ListaTF.add(vector);
+				vector=MultipleChoice.Calcular_Percent_ThinkingVsFeeling(slider14.getValue());
+				ListaTF.add(vector);
+				vector=MultipleChoice.Calcular_Percent_ThinkingVsFeeling(slider15.getValue());
+				ListaTF.add(vector);
+				vector=MultipleChoice.Calcular_Percent_ThinkingVsFeeling(slider18.getValue());
+				ListaTF.add(vector);
+				vector=MultipleChoice.Calcular_Percent_ThinkingVsFeeling(slider25.getValue());
+				ListaTF.add(vector);
+				TF=MultipleChoice.Evaluar_Pregunta_ThinkingVsFeeling(ListaTF);
+				System.out.println(TF);
+				
+				vector=MultipleChoice.Calcular_Percent_JudgingVsPerceiving(slider5.getValue());
+				ListaJP.add(vector);
+				vector=MultipleChoice.Calcular_Percent_JudgingVsPerceiving(slider6.getValue());
+				ListaJP.add(vector);
+				vector=MultipleChoice.Calcular_Percent_JudgingVsPerceiving(slider9.getValue());
+				ListaJP.add(vector);
+				vector=MultipleChoice.Calcular_Percent_JudgingVsPerceiving(slider11.getValue());
+				ListaJP.add(vector);
+				vector=MultipleChoice.Calcular_Percent_JudgingVsPerceiving(slider19.getValue());
+				ListaJP.add(vector);
+				vector=MultipleChoice.Calcular_Percent_JudgingVsPerceiving(slider22.getValue());
+				ListaJP.add(vector);
+				vector=MultipleChoice.Calcular_Percent_JudgingVsPerceiving(slider27.getValue());
+				ListaJP.add(vector);
+				JP=MultipleChoice.Evaluar_Pregunta_JudgingVsPerceiving(ListaJP);
+				System.out.println(JP);
+				System.out.println("-------------");
+				
+				Personalities pfinal=Quiz.DefinirPersonalidad(EI, SN, TF, JP);
+				System.out.println(pfinal.toString());
+				
+				
+			}
+		});
 		btnResults.setBounds(962, 240, 102, 50);
 		panelQuiz.add(btnResults);
 		
@@ -586,6 +681,7 @@ public class UI {
 		panelObj.setLayout(null);
 		
 		txtQuiz = new JTextField();
+		txtQuiz.setEditable(false);
 		txtQuiz.setBounds(10, 2, 160, 22);
 		panelObj.add(txtQuiz);
 		txtQuiz.setBorder(null);
@@ -599,9 +695,9 @@ public class UI {
 		txtDisagree.setBorder(null);
 		txtDisagree.setFont(new Font("Cambria", Font.BOLD, 14));
 		txtDisagree.setBackground(SystemColor.control);
-		txtDisagree.setBounds(966, 4, 59, 20);
+		txtDisagree.setBounds(973, 4, 99, 20);
 		panelObj.add(txtDisagree);
-		txtDisagree.setText("Disagree");
+		txtDisagree.setText("Agree");
 		txtDisagree.setColumns(10);
 		
 		txtAgree = new JTextField();
@@ -609,19 +705,21 @@ public class UI {
 		txtAgree.setBorder(null);
 		txtAgree.setBackground(SystemColor.control);
 		txtAgree.setFont(new Font("Cambria", Font.BOLD, 14));
-		txtAgree.setBounds(718, 4, 43, 20);
+		txtAgree.setBounds(674, 4, 70, 20);
 		panelObj.add(txtAgree);
-		txtAgree.setText("Agree");
+		txtAgree.setText("Disagree");
 		txtAgree.setColumns(10);
 		
 		textField = new JTextField();
+		textField.setHorizontalAlignment(SwingConstants.CENTER);
+		textField.setEditable(false);
 		textField.setBorder(null);
 		textField.setBackground(SystemColor.control);
-		textField.setFont(new Font("Cambria", Font.PLAIN, 16));
-		textField.setText("3  -  2  -  1  -  0  -  1  -  2  -  3");
-		textField.setBounds(765, 4, 198, 20);
+		textField.setFont(new Font("Dialog", Font.PLAIN, 14));
+		textField.setText("3  -   2  -  1  -  0  -  1  -   2  -  3");
+		textField.setBounds(759, 4, 202, 20);
 		panelObj.add(textField);
-		textField.setColumns(10);
+		textField.setColumns(12);
 		
 		panelSplash = new JPanel();
 		panelSplash.setBounds(0, 0, 1084, 711);
@@ -654,4 +752,5 @@ public class UI {
 		panelSplash.add(btnNewButton);
 		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 16));
 	}
+	
 }

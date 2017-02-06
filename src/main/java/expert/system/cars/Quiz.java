@@ -42,6 +42,75 @@ public class Quiz {
 
 	public ArrayList<Question> getQuestions() {
 		return questions;
-	}  
+	} 
+	
+public static Personalities DefinirPersonalidad(String EI, String SN, String TF, String JP){
+		
+		if(EI.equals("Introvertion") && SN.equals("Intuition") && TF.equals("Thinking")){
+			if(JP.equals("Judging"))
+				return Personalities.ARCHITECT;
+			else if(JP.equals("Perceiving"))
+				return Personalities.LOGICIAN;
+		
+		} else
+		
+		if(EI.equals("Extravertion") && SN.equals("Intuition") && TF.equals("Thinking")){
+			if(JP.equals("Judging"))
+				return Personalities.COMMANDER;
+			else if(JP.equals("Perceiving"))
+				return Personalities.DEBATER;
+		
+		} else
+		
+		if(EI.equals("Introvertion") && SN.equals("Intuition") && TF.equals("Feeling")){
+			if(JP.equals("Judging"))
+				return Personalities.ADVOCATE;
+			else if(JP.equals("Perceiving"))
+				return Personalities.MEDIATOR;
+		
+		} else
+		
+		if(EI.equals("Extravertion") && SN.equals("Intuition") && TF.equals("Feeling")){
+			if(JP.equals("Judging"))
+				return Personalities.PROTAGONIST;
+			else if(JP.equals("Perceiving"))
+				return Personalities.CAMPAIGNER;
+		} else
+		
+		if(EI.equals("Introvertion") && SN.equals("Sensing") && JP.equals("Judging")){
+			if(TF.equals("Thinking"))
+				return Personalities.LOGISTICIAN;
+			else if(JP.equals("Feeling"))
+				return Personalities.DEFENDER;
+		
+		} else
+		
+		if(EI.equals("Extravertion") && SN.equals("Sensing") && JP.equals("Judging")){
+			if(TF.equals("Thinking"))
+				return Personalities.EXECUTIVE;
+			else if(JP.equals("Feeling"))
+				return Personalities.CONSUL;
+		
+		} else
+		
+		if(EI.equals("Introvertion") && SN.equals("Sensing") && JP.equals("Perceiving")){
+			if(TF.equals("Thinking"))
+				return Personalities.VIRTUOSO;
+			else if(JP.equals("Feeling"))
+				return Personalities.ADVENTURER;
+		
+		} else
+		
+		if(EI.equals("Extravertion") && SN.equals("Sensing") && JP.equals("Perceiving")){
+			if(TF.equals("Thinking"))
+				return Personalities.ENTREPRENEUR;
+			else if(JP.equals("Feeling"))
+				return Personalities.ENTERTAINER;
+		} 
+		
+		return null;
+				
+		
+	}
 		
 }
