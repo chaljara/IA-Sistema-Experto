@@ -26,7 +26,7 @@ public class Quiz {
 		questions.add(new Question("16. You often get carried away by fantasies and ideas" , 0));
 		questions.add(new Question("17. You often find yourself lost in thought when you are walking in nature" , 0));
 		questions.add(new Question("18. As a parent, you would rather see your child grow up kind than smart" , 0));
-		questions.add(new Question("19 You often let other people influence your actions" , 0));
+		questions.add(new Question("19. You often let other people influence your actions" , 0));
 		questions.add(new Question("20. Your dreams do not tend to focus on the real world and its events" , 0));
 		questions.add(new Question("21. You often spend time exploring unrealistic and impractical yet intriguing ideas" , 0));
 		questions.add(new Question("22. You would rather improvise than spend time coming up with a detailed plan" , 0));

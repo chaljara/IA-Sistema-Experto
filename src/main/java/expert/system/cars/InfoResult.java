@@ -1,7 +1,7 @@
 package expert.system.cars;
 
 public class InfoResult {
-	private String StyleType;
+	private String StyleType ="XZX";
 	private String personalityInfo;
 	private String traits;
 	private Personality personality;

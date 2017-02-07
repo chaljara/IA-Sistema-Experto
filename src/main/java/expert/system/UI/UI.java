@@ -6,7 +6,6 @@ import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.Insets;
 import java.awt.SystemColor;
-import java.awt.Window.Type;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.WindowEvent;
@@ -46,6 +45,7 @@ public class UI {
 	private JPanel panelObj;
 	private JPanel panelResult;
 	private JPanel panelInfoPersonality;
+	private JButton btnResults;
 
 	public JPanel panelCarImage;
 	public JLabel lblNewLabel;
@@ -617,14 +617,13 @@ public class UI {
 		txtpnYouOften_4.setFont(new Font("Cambria", Font.PLAIN, 16));
 		panelQuestions.add(txtpnYouOften_4);
 		
-		JButton btnResults = new JButton("RESULT");
+		btnResults = new JButton("RESULT");
 		btnResults.setFont(new Font("Cambria", Font.PLAIN, 14));
 		btnResults.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				
 				infoResult = droolsTest.recommendACarByPersonality(calculatePersonality());
-				
 				if(infoResult != null){
 					Car carSelected = carList.getCarByStyleType(infoResult.getStyleType());
 					infoResult.setCarSelected(carSelected);
@@ -737,7 +736,7 @@ private void showResultOnWindow(){
 		frmCarResult = new JFrame();
 		frmCarResult.getContentPane().setFont(new Font("Cambria", Font.PLAIN, 18));
 		frmCarResult.setTitle("RESULTS FOR " + infoResult.getTraits());
-		frmCarResult.setType(Type.POPUP);
+		//frmCarResult.setType(Type.POPUP);
 		frmCarResult.setBounds(0, 0, 505, 600);
 		frmCarResult.setLocationRelativeTo(frmCarAdvisorExpert);
 		frmCarResult.getContentPane().setLayout(null);
@@ -763,7 +762,7 @@ private void showResultOnWindow(){
 		txtpnInforPer.setEditable(false);
 		txtpnInforPer.setText(infoResult.getPersonalityInfo());
 		panelInfoPersonality.add(txtpnInforPer);
-		
+
 		panelCarImage = new JPanel();
 		panelCarImage.setBounds(70, 140, 360, 243);
 		panelResult.add(panelCarImage);
@@ -815,7 +814,7 @@ private void showResultOnWindow(){
 		panelCarSpecs.add(textPaneYearPrice);
 		
 		JTextPane textPaneCapacWei = new JTextPane();
-		textPaneCapacWei.setText("Seat Capacity: "+infoResult.getCarSelected().getCapacity()+"     "+"Weight: "+infoResult.getCarSelected().getWeight());
+		textPaneCapacWei.setText("Seat Capacity: "+infoResult.getCarSelected().getCapacity()+"     "+"Weight: "+infoResult.getCarSelected().getWeight()+" Kg");
 		textPaneCapacWei.setMargin(new Insets(0, 0, 0, 0));
 		textPaneCapacWei.setFont(new Font("Cambria", Font.PLAIN, 18));
 		textPaneCapacWei.setEditable(false);
