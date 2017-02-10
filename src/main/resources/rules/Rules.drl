@@ -1,8 +1,9 @@
 package rules
 
-import expert.system.cars.Personality
-import expert.system.cars.InfoResult
-import expert.system.drools.droolsTest
+import com.house.cars.Personality
+import com.house.cars.InfoResult
+import com.house.UI.UI
+import java.lang.String
 
 dialect "java"
 
@@ -170,4 +171,12 @@ rule "Recommend by ENTERTAINER personality"
 		info.setTraits("ESFP");
 		info.setPersonalityInfo("Your personality is ENTERTAINER\nSpontaneous, energetic and enthusiastic people, life is never boring around them. "
 								+"Your affinity for adventure and spontaneity reveals that you need a ride to support your energy.");
+end
+
+rule "Getting a Car" 
+	salience -1
+	when
+		info: InfoResult(StyleType != null, StyleType.length() > 0)
+	then
+		info.setCarSelected(UI.carList.getCarByStyleType(info.getStyleType()));
 end
