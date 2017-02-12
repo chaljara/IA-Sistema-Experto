@@ -30,7 +30,7 @@ public class Quiz {
 		questions.add(new Question("20. Your dreams do not tend to focus on the real world and its events" , 0));
 		questions.add(new Question("21. You often spend time exploring unrealistic and impractical yet intriguing ideas" , 0));
 		questions.add(new Question("22. You would rather improvise than spend time coming up with a detailed plan" , 0));
-		questions.add(new Question("23. You are not a reserved and quiet person" , 0));
+		questions.add(new Question("23. You are a reserved and quiet person" , 0));
 		questions.add(new Question("24. You often contemplate the reasons for human existence" , 0));
 		questions.add(new Question("25. Being right is less important than being cooperative when it comes to teamwork" , 0));
 		questions.add(new Question("26. You frequently misplace your things" , 0));
@@ -43,7 +43,7 @@ public class Quiz {
 	public ArrayList<Question> getQuestions() {
 		return questions;
 	} 
-	
+	/*
 public static Personality DefinirPersonalidad(String EI, String SN, String TF, String JP){
 		
 		if(EI.equals("Introvertion") && SN.equals("Intuition") && TF.equals("Thinking")){
@@ -113,5 +113,5 @@ public static Personality DefinirPersonalidad(String EI, String SN, String TF, S
 				
 		
 	}
-		
+	*/	
 }

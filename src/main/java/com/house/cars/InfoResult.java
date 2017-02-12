@@ -1,15 +1,36 @@
 package com.house.cars;
 
+import java.util.ArrayList;
+
+import com.house.cars.Personality.MyersBriggsType;
+
 public class InfoResult {
 	private String StyleType = "Compact";
 	private String personalityInfo;
 	private String traits;
-	private Personality personality;
+	private MyersBriggsType MBType;
 	private Car carSelected;
 	
-	public InfoResult(Personality personality){
-		this.personality=personality;
+	
+	public InfoResult() {
 	}
+	
+
+	public InfoResult(MyersBriggsType mBType) {
+		super();
+		MBType = mBType;
+	}
+
+	
+	public MyersBriggsType getMBType() {
+		return MBType;
+	}
+
+
+	public void setMBType(MyersBriggsType mBType) {
+		MBType = mBType;
+	}
+
 
 	public String getPersonalityInfo() {
 		return personalityInfo;
@@ -35,21 +56,19 @@ public class InfoResult {
 	public void setStyleType(String styleType) {
 		StyleType = styleType;
 	}
-
-	public Personality getPersonality() {
-		return personality;
-	}
-
-	public void setPersonality(Personality personality) {
-		this.personality = personality;
-	}
-
 	public Car getCarSelected() {
 		return carSelected;
 	}
 
 	public void setCarSelected(Car carSelected) {
 		this.carSelected = carSelected;
+	}
+
+
+	@Override
+	public String toString() {
+		return "InfoResult [StyleType=" + StyleType + ", traits=" + traits + ", MBType=" + MBType + ", carSelected="
+				+ carSelected + "]";
 	}
 	
 }

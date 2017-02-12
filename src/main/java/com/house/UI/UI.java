@@ -6,8 +6,10 @@ import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.Insets;
 import java.awt.SystemColor;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
+import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.util.ArrayList;
 
@@ -25,17 +27,15 @@ import javax.swing.border.LineBorder;
 import com.house.DB.DB;
 import com.house.cars.CarList;
 import com.house.cars.InfoResult;
-import com.house.cars.MultipleChoice;
 import com.house.cars.Personality;
 import com.house.cars.Question;
 import com.house.cars.Quiz;
 import com.house.drools.DroolsTest;
-import java.awt.Toolkit;
 
 
 public class UI {
 	public static CarList carList;
-	private InfoResult infoResult;
+	private ArrayList<InfoResult> infoResultList;
 	private JFrame frmCarAdvisorExpert;
 	private JFrame frmCarResult;
 	private JPanel panelSlider;
@@ -47,13 +47,22 @@ public class UI {
 	private JPanel panelResult;
 	private JPanel panelInfoPersonality;
 	private JButton btnResults;
-
 	public JPanel panelCarImage;
 	public JLabel lblNewLabel;
 	public JPanel panelCarSpecs;
+	private JTextPane txtpnPercent;
 	private JTextField txtAgree;
 	private JTextField txtDisagree;
 	private JTextField textField;
+	private JTextPane textPaneBody;
+	private JTextPane textPaneMaker;
+	private JTextPane textPaneModel;
+	private JTextPane textPaneYearPrice;
+	private JTextPane textPaneCapacWei;
+	private JTextPane txtpnInforPer;
+	private JButton btnForward;
+	private JButton btnBack;
+	private int actualIndex = 0;
 	private Quiz Survey;
 	private JSlider slider1, slider2, slider3, slider4, slider5;
 	private JSlider slider6, slider7, slider8, slider9, slider10;
@@ -68,7 +77,6 @@ public class UI {
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
-
 		carList = DB.loadData();
 		
 		EventQueue.invokeLater(new Runnable() {
@@ -122,7 +130,7 @@ public class UI {
 		panelSlider = new JPanel();
 		panelSlider.setBounds(750, 12, 202, 673);
 		panelQuiz.add(panelSlider);
-		panelSlider.setLayout(null);
+		panelSlider.setLayout(null);		
 		
 		slider1 = new JSlider();
 		slider1.setBounds(0, -1, 200, 23);
@@ -622,32 +630,63 @@ public class UI {
 		panelQuestions.add(txtpnYouOften_4);
 		
 		btnResults = new JButton("RESULT");
-		btnResults.setFont(new Font("Cambria", Font.PLAIN, 14));
-		btnResults.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
+		btnResults.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(frmCarResult != null){
+					frmCarResult.toFront();
+					return;
+				}
+				btnResults.setEnabled(false);
+				Personality personality = new Personality();
+				personality
+					.add("EI", slider1.getValue())
+					.add("EI", slider4.getValue())
+					.add("EI", slider8.getValue())
+					.add("EI", slider12.getValue())
+					.add("EI", slider23.getValue())
+					.add("EI", slider28.getValue())
+					.add("EI", slider30.getValue())
+					.add("SN", slider3.getValue())
+					.add("SN", slider16.getValue())
+					.add("SN", slider17.getValue())
+					.add("SN", slider20.getValue())
+					.add("SN", slider21.getValue())
+					.add("SN", slider24.getValue())
+					.add("SN", slider26.getValue())
+					.add("SN", slider29.getValue())
+					.add("TF", slider2.getValue())
+					.add("TF", slider7.getValue())
+					.add("TF", slider10.getValue())
+					.add("TF", slider13.getValue())
+					.add("TF", slider14.getValue())
+					.add("TF", slider15.getValue())
+					.add("TF", slider18.getValue())
+					.add("TF", slider25.getValue())
+					.add("JP", slider5.getValue())
+					.add("JP", slider6.getValue())
+					.add("JP", slider9.getValue())
+					.add("JP", slider11.getValue())
+					.add("JP", slider19.getValue())
+					.add("JP", slider22.getValue())
+					.add("JP", slider27.getValue())
+					.processMB();
 				
-				infoResult = DroolsTest.recommendACarByPersonality(calculatePersonality());
+					
+				infoResultList = DroolsTest.recommendACarByPersonality(personality.sortMB());
 				showResultOnWindow();
 			}
 		});
-		/*btnResults.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				
-				
-			}
-		});*/
+		btnResults.setFont(new Font("Cambria", Font.PLAIN, 14));
 		btnResults.setBounds(962, 540, 102, 83);
 		panelQuiz.add(btnResults);
 		
 		JButton btnRandom = new JButton("RANDOM");
-		btnRandom.setFont(new Font("Cambria", Font.PLAIN, 12));
-		btnRandom.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent arg0) {
+		btnRandom.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
 				randomSliders();
 			}
 		});
+		btnRandom.setFont(new Font("Cambria", Font.PLAIN, 12));
 		btnRandom.setBounds(962, 634, 102, 23);
 		panelQuiz.add(btnRandom);
 		panelObj.setBounds(0, 0, 1084, 711);
@@ -715,9 +754,8 @@ public class UI {
 		txtpnAnExpertSystem.setText("An expert system that advises you which\r\nvehicle to buy based on your personality");
 		
 		btnNewButton = new JButton("START");
-		btnNewButton.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent arg0) {
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
 				panelSplash.setVisible(false);
 				panelQuiz.setVisible(true);
 				panelObj.setVisible(true);
@@ -730,19 +768,25 @@ public class UI {
 	
 private void showResultOnWindow(){
 		
-		if( infoResult == null) {
-			btnResults.setBackground(Color.RED);
+		if( infoResultList == null || infoResultList.size() <= 0) {
 			return;
 		}
 		
 		frmCarResult = new JFrame();
 		frmCarResult.getContentPane().setFont(new Font("Cambria", Font.PLAIN, 18));
-		frmCarResult.setTitle("RESULTS FOR " + infoResult.getTraits());
 		//frmCarResult.setType(Type.POPUP);
 		frmCarResult.setBounds(0, 0, 505, 600);
 		frmCarResult.setLocationRelativeTo(frmCarAdvisorExpert);
 		frmCarResult.getContentPane().setLayout(null);
 		frmCarResult.setBackground(SystemColor.control);
+		frmCarResult.addWindowListener(new WindowAdapter() {
+			@Override
+			public void windowClosing(WindowEvent e) {
+				actualIndex = 0;
+				frmCarResult = null;
+				btnResults.setEnabled(true);
+			}
+		});
 		frmCarResult.setResizable(false);
 		
 		panelResult = new JPanel();
@@ -757,12 +801,19 @@ private void showResultOnWindow(){
 		panelResult.add(panelInfoPersonality);
 		panelInfoPersonality.setLayout(null);
 		
-		JTextPane txtpnInforPer = new JTextPane();
+		txtpnPercent = new JTextPane();
+		txtpnPercent.setBackground(SystemColor.controlHighlight);
+		txtpnPercent.setFont(new Font("Cambria", Font.PLAIN, 15));
+		txtpnPercent.setBounds(5, 140, 60, 60);
+		txtpnPercent.setEditable(false);
+		txtpnPercent.setFont(new Font("Cambria", Font.BOLD, 26));
+		panelResult.add(txtpnPercent);
+		
+		txtpnInforPer = new JTextPane();
 		txtpnInforPer.setBackground(SystemColor.controlHighlight);
 		txtpnInforPer.setFont(new Font("Cambria", Font.PLAIN, 15));
 		txtpnInforPer.setBounds(0, 0, 480, 118);
 		txtpnInforPer.setEditable(false);
-		txtpnInforPer.setText(infoResult.getPersonalityInfo());
 		panelInfoPersonality.add(txtpnInforPer);
 
 		panelCarImage = new JPanel();
@@ -770,7 +821,6 @@ private void showResultOnWindow(){
 		panelResult.add(panelCarImage);
 		
 		lblNewLabel = new JLabel("");
-		lblNewLabel.setIcon(new ImageIcon(UI.class.getResource("/res/"+infoResult.getCarSelected().getId()+".jpg")));//..getImage().getScaledInstance(20, 20, Image.SCALE_DEFAULT));
 		panelCarImage.add(lblNewLabel);
 		
 		panelCarSpecs = new JPanel();
@@ -779,8 +829,7 @@ private void showResultOnWindow(){
 		panelResult.add(panelCarSpecs);
 		panelCarSpecs.setLayout(null);
 		
-		JTextPane textPaneMaker = new JTextPane();
-		textPaneMaker.setText("Make: "+infoResult.getCarSelected().getMake());
+		textPaneMaker = new JTextPane();
 		textPaneMaker.setMargin(new Insets(0, 0, 0, 0));
 		textPaneMaker.setFont(new Font("Cambria", Font.PLAIN, 18));
 		textPaneMaker.setEditable(false);
@@ -788,26 +837,23 @@ private void showResultOnWindow(){
 		textPaneMaker.setBounds(0, 0, 360, 21);
 		panelCarSpecs.add(textPaneMaker);
 		
-		JTextPane textPaneModel = new JTextPane();
+		textPaneModel = new JTextPane();
 		textPaneModel.setMargin(new Insets(0, 0, 0, 0));
 		textPaneModel.setFont(new Font("Cambria", Font.PLAIN, 18));
 		textPaneModel.setBackground(SystemColor.controlHighlight);
 		textPaneModel.setBounds(0, 27, 360, 21);
 		textPaneModel.setEditable(false);
-		textPaneModel.setText("Model: "+infoResult.getCarSelected().getModel());
 		panelCarSpecs.add(textPaneModel);
 		
-		JTextPane textPaneBody = new JTextPane();
+	    textPaneBody = new JTextPane();
 		textPaneBody.setMargin(new Insets(0, 0, 0, 0));
-		textPaneBody.setText("Style: "+ infoResult.getStyleType());
 		textPaneBody.setFont(new Font("Cambria", Font.PLAIN, 18));
 		textPaneBody.setEditable(false);
 		textPaneBody.setBackground(SystemColor.controlHighlight);
 		textPaneBody.setBounds(0, 54, 360, 21);
 		panelCarSpecs.add(textPaneBody);
 		
-		JTextPane textPaneYearPrice = new JTextPane();
-		textPaneYearPrice.setText("Year: "+infoResult.getCarSelected().getYear()+"     "+"Price: $"+infoResult.getCarSelected().getPrice());
+		textPaneYearPrice = new JTextPane();
 		textPaneYearPrice.setMargin(new Insets(0, 0, 0, 0));
 		textPaneYearPrice.setFont(new Font("Cambria", Font.PLAIN, 18));
 		textPaneYearPrice.setEditable(false);
@@ -815,8 +861,7 @@ private void showResultOnWindow(){
 		textPaneYearPrice.setBounds(0, 79, 360, 21);
 		panelCarSpecs.add(textPaneYearPrice);
 		
-		JTextPane textPaneCapacWei = new JTextPane();
-		textPaneCapacWei.setText("Seat Capacity: "+infoResult.getCarSelected().getCapacity()+"     "+"Weight: "+infoResult.getCarSelected().getWeight()+" Kg");
+		textPaneCapacWei = new JTextPane();
 		textPaneCapacWei.setMargin(new Insets(0, 0, 0, 0));
 		textPaneCapacWei.setFont(new Font("Cambria", Font.PLAIN, 18));
 		textPaneCapacWei.setEditable(false);
@@ -824,119 +869,89 @@ private void showResultOnWindow(){
 		textPaneCapacWei.setBounds(0, 105, 360, 21);
 		panelCarSpecs.add(textPaneCapacWei);
 		
-		JButton btnNewButton_1 = new JButton("Close");
-		btnNewButton_1.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent arg0) {
+		JButton btnClose = new JButton("Close");
+		btnClose.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
 				frmCarResult.dispatchEvent(new WindowEvent(frmCarResult, WindowEvent.WINDOW_CLOSING));
 				frmCarResult = null;
+				actualIndex = 0;
 			}
 		});
-		btnNewButton_1.setFont(new Font("Cambria", Font.PLAIN, 16));
-		btnNewButton_1.setBounds(70, 535, 360, 30);
-		panelResult.add(btnNewButton_1);
+		btnClose.setFont(new Font("Cambria", Font.PLAIN, 16));
+		btnClose.setBounds(70, 535, 360, 30);
+		panelResult.add(btnClose);
 		
+
+		btnBack = new JButton("");
+		btnBack.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				showContent(--actualIndex);
+			}
+		});
+		btnBack.setIcon(new ImageIcon(UI.class.getResource("/res/iconb.png")));
+		btnBack.setFont(new Font("Cambria", Font.PLAIN, 12));
+		btnBack.setBounds(10, 240, 50, 50);
+		btnBack.setEnabled(true);
+		panelResult.add(btnBack);
+		
+		btnForward = new JButton("");
+		btnForward.setFont(new Font("Cambria", Font.PLAIN, 12));
+		btnForward.setIcon(new ImageIcon(UI.class.getResource("/res/iconf.png")));
+		btnForward.setFont(new Font("Cambria", Font.PLAIN, 12));
+		btnForward.setBounds(440, 240, 50, 50);
+		btnForward.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				showContent(++actualIndex);
+			}
+		});
+		btnForward.setEnabled(true);
+		panelResult.add(btnForward);
+		actualIndex = 0;
+		showContent(actualIndex);
 		frmCarResult.getContentPane().add(panelResult);
 		frmCarResult.setVisible(true);
 	}
-	
-	public Personality calculatePersonality(){
-		ArrayList<double[]> ListaEI;
-		ListaEI=new ArrayList();
-		ArrayList<double[]>ListaSN;
-		ListaSN=new ArrayList();
-		ArrayList<double[]> ListaTF;
-		ListaTF=new ArrayList();
-		ArrayList<double[]>ListaJP;
-		ListaJP=new ArrayList();
-		double vector[]=new double[2];
-		String EI,SN,TF,JP;
 
-		vector=MultipleChoice.Calcular_Percent_ExtravertionVsIntravertion(slider1.getValue());
-		ListaEI.add(vector);
-		vector=MultipleChoice.Calcular_Percent_ExtravertionVsIntravertion(slider4.getValue());
-		ListaEI.add(vector);
-		vector=MultipleChoice.Calcular_Percent_ExtravertionVsIntravertion(slider8.getValue());
-		ListaEI.add(vector);
-		vector=MultipleChoice.Calcular_Percent_ExtravertionVsIntravertion(slider12.getValue());
-		ListaEI.add(vector);
-		vector=MultipleChoice.Calcular_Percent_ExtravertionVsIntravertion(slider23.getValue());
-		ListaEI.add(vector);
-		vector=MultipleChoice.Calcular_Percent_ExtravertionVsIntravertion(slider28.getValue());
-		ListaEI.add(vector);
-		vector=MultipleChoice.Calcular_Percent_ExtravertionVsIntravertion(slider30.getValue());
-		ListaEI.add(vector);
-		EI=MultipleChoice.Evaluar_Pregunta_ExtravertionVsIntravertion(ListaEI);
-		//System.out.println(EI);
-		
-		vector=MultipleChoice.Calcular_Percent_SensingVsIntuition(slider3.getValue());
-		ListaSN.add(vector);
-		vector=MultipleChoice.Calcular_Percent_SensingVsIntuition(slider16.getValue());
-		ListaSN.add(vector);
-		vector=MultipleChoice.Calcular_Percent_SensingVsIntuition(slider17.getValue());
-		ListaSN.add(vector);
-		vector=MultipleChoice.Calcular_Percent_SensingVsIntuition(slider20.getValue());
-		ListaSN.add(vector);
-		vector=MultipleChoice.Calcular_Percent_SensingVsIntuition(slider21.getValue());
-		ListaSN.add(vector);
-		vector=MultipleChoice.Calcular_Percent_SensingVsIntuition(slider24.getValue());
-		ListaSN.add(vector);
-		vector=MultipleChoice.Calcular_Percent_SensingVsIntuition(slider26.getValue());
-		ListaSN.add(vector);
-		vector=MultipleChoice.Calcular_Percent_SensingVsIntuition(slider29.getValue());
-		ListaSN.add(vector);
-		SN=MultipleChoice.Evaluar_Pregunta_SensingVsIntuition(ListaSN);
-		//System.out.println(SN);
-		
-		vector=MultipleChoice.Calcular_Percent_ThinkingVsFeeling(slider2.getValue());
-		ListaTF.add(vector);
-		vector=MultipleChoice.Calcular_Percent_ThinkingVsFeeling(slider7.getValue());
-		ListaTF.add(vector);
-		vector=MultipleChoice.Calcular_Percent_ThinkingVsFeeling(slider10.getValue());
-		ListaTF.add(vector);
-		vector=MultipleChoice.Calcular_Percent_ThinkingVsFeeling(slider13.getValue());
-		ListaTF.add(vector);
-		vector=MultipleChoice.Calcular_Percent_ThinkingVsFeeling(slider14.getValue());
-		ListaTF.add(vector);
-		vector=MultipleChoice.Calcular_Percent_ThinkingVsFeeling(slider15.getValue());
-		ListaTF.add(vector);
-		vector=MultipleChoice.Calcular_Percent_ThinkingVsFeeling(slider18.getValue());
-		ListaTF.add(vector);
-		vector=MultipleChoice.Calcular_Percent_ThinkingVsFeeling(slider25.getValue());
-		ListaTF.add(vector);
-		TF=MultipleChoice.Evaluar_Pregunta_ThinkingVsFeeling(ListaTF);
-		//System.out.println(TF);
-		
-		vector=MultipleChoice.Calcular_Percent_JudgingVsPerceiving(slider5.getValue());
-		ListaJP.add(vector);
-		vector=MultipleChoice.Calcular_Percent_JudgingVsPerceiving(slider6.getValue());
-		ListaJP.add(vector);
-		vector=MultipleChoice.Calcular_Percent_JudgingVsPerceiving(slider9.getValue());
-		ListaJP.add(vector);
-		vector=MultipleChoice.Calcular_Percent_JudgingVsPerceiving(slider11.getValue());
-		ListaJP.add(vector);
-		vector=MultipleChoice.Calcular_Percent_JudgingVsPerceiving(slider19.getValue());
-		ListaJP.add(vector);
-		vector=MultipleChoice.Calcular_Percent_JudgingVsPerceiving(slider22.getValue());
-		ListaJP.add(vector);
-		vector=MultipleChoice.Calcular_Percent_JudgingVsPerceiving(slider27.getValue());
-		ListaJP.add(vector);
-		JP=MultipleChoice.Evaluar_Pregunta_JudgingVsPerceiving(ListaJP);
-		//System.out.println(JP);
-		//System.out.println("-------------");
-		
-		return Quiz.DefinirPersonalidad(EI, SN, TF, JP);
+	private void showContent(int index)
+	{
+		if(infoResultList == null || infoResultList.size() <= 0 || actualIndex < 0) return;
+		if(actualIndex == 0){
+			btnBack.setEnabled(false);
+			btnForward.setEnabled(true);
+		}
+		else if(actualIndex == infoResultList.size()-1){
+			btnBack.setEnabled(true);
+			btnForward.setEnabled(false);
+		}
+		else{
+			btnBack.setEnabled(true);
+			btnForward.setEnabled(true);
+		}
+			
+		try{
+			frmCarResult.setTitle((actualIndex + 1) + ". RESULTS FOR " + infoResultList.get(actualIndex).getTraits());
+			txtpnPercent.setText(((int)(infoResultList.get(actualIndex).getMBType().getSum() * 100)) + "%");
+			txtpnInforPer.setText(infoResultList.get(actualIndex).getPersonalityInfo());
+			lblNewLabel.setIcon(new ImageIcon(UI.class.getResource("/res/"+infoResultList.get(actualIndex).getCarSelected().getId()+".jpg")));//..getImage().getScaledInstance(20, 20, Image.SCALE_DEFAULT));
+
+			textPaneBody.setText("Style: "+ infoResultList.get(actualIndex).getStyleType());
+			textPaneMaker.setText("Make: "+infoResultList.get(actualIndex).getCarSelected().getMake());
+			textPaneModel.setText("Model: "+infoResultList.get(actualIndex).getCarSelected().getModel());
+			textPaneYearPrice.setText("Year: "+infoResultList.get(actualIndex).getCarSelected().getYear()+"     "+"Price: $"+infoResultList.get(actualIndex).getCarSelected().getPrice());
+			textPaneCapacWei.setText("Seat Capacity: "+infoResultList.get(actualIndex).getCarSelected().getCapacity()+"     "+"Weight: "+infoResultList.get(actualIndex).getCarSelected().getWeight()+" Kg");
+		}
+		catch(ArrayIndexOutOfBoundsException e)
+		{
+			actualIndex = 0;
+		}
 	}
-	
+
 	public void randomSliders(){
 		if(sliderList == null) return;
 		for(JSlider slider: sliderList){
 			if(slider != null){
 				slider.setValue(1 + (int)(Math.random() * ((7 - 1) + 1)));
-				
-				
 			}
-				
 		}
 	}
 }
